@@ -32,7 +32,7 @@ const SwiperHero = ({ slide }) => {
               </h1>
               <p>The best digital for your bisniss begins now</p>
             </div>
-            <div className="contact-hero bg-white w-[80%]   sm:w-[70%] h-[353px] sm:h-[123px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] pl-[6rem] items-center rounded-r-[40px] ">
+            <div className="contact-hero bg-white w-[80%]   sm:w-[70%] h-[353px] sm:h-[123px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px] ">
               <div  className="input">
                 <label for="name">Name</label>
                 <div>
