@@ -178,6 +178,24 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .card{
+    height: 400px !important;
+  }
+  .font-judul{
+    font-size: 24px !important;
+  }
+  #partner .swiper-button-prev{
+    right: 4rem !important;
+  }
+  #partner .swiper-button-next{
+    right: 0.5rem !important;
+  }
+  #partner .partner-wrap{
+    height: 40vh;
+  }
+  .swipperHero input {
+    width: 100% !important;
+  }
   #review .konten .swiper-slide {
   margin-right: 20px !important;
 
@@ -194,10 +212,10 @@
     left: 1.5em !important;
   }
   .swipperHero .hero-1 .teks h1 {
-    font-size: 42px !important;
+    font-size: 40px !important;
   }
   .swipperHero .hero-1 .teks {
-    width: 75% !important;
+    width: 85% !important;
     margin-top: 2rem !important;
     padding-right: 2rem !important;
   }
@@ -214,7 +232,28 @@
     margin: 0 2rem;
   }
 }
-
+@media only screen and (max-width: 400px) {
+  .font-judul{
+    font-size: 21px !important;
+  }
+  #partner .partner-wrap{
+    height: 54vh ;
+  }
+  .contact-hero.bg-white{
+    height: 280px;
+  }
+  .contact-hero.bg-white .input {
+    font-size: 12px;
+}
+  .swipperHero .hero-1 .teks h1 {
+    font-size: 38px !important;
+  }
+  .swipperHero .hero-1 .teks {
+    width: 85% !important;
+    margin-top: 4rem !important;
+    padding-right: 2rem !important;
+  }
+}
 .swipperHero .splide {
   padding: 0 !important;
 }

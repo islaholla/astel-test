@@ -30,7 +30,7 @@ const Billing = () => {
     >
       <div className="flex-1 flex flex-col relative">
 
-        <div className="relative gap-[4.5rem] mt-[1.5rem] h-[40vh] sm:h-[100%] ">
+        <div className="relative gap-[4.5rem] mt-[1.5rem] h-[100%] partner-wrap">
         <h2 className={styles.heading2}>  {partner.title ? partner.title.rendered :''}</h2>
         <div className="w-[150px] line"></div>
           <div className="w-[100%] sm:w-[34%]">
