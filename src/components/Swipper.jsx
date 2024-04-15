@@ -32,7 +32,7 @@ const SwiperHero = ({ slide }) => {
               </h1>
               <p>The best digital for your bisniss begins now</p>
             </div>
-            <div className="contact-hero bg-white w-[80%]   sm:w-[70%] h-[353px] sm:h-[123px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px] ">
+            <div className="contact-hero bg-white w-[80%]   2xl:w-[70%] h-[353px] xl:h-[123px]  sm:h-[103px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px] ">
               <div  className="input">
                 <label for="name">Name</label>
                 <div>
@@ -45,40 +45,40 @@ const SwiperHero = ({ slide }) => {
                 </div>
               </div>
               <div className="input">
-                <label for="name">Name</label>
+                <label for="name">Email</label>
                 <div>
                   <input
                     type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter your name ..."
+                    name="email"
+                    id="email"
+                    placeholder="Enter your email ..."
                   />
                 </div>
               </div>
               <div className="input">
-                <label for="name">Name</label>
+                <label for="name">Phone</label>
                 <div>
                   <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter your name ..."
+                    type="number"
+                    name="phone"
+                    id="phone"
+                    placeholder="Enter your phone ..."
                   />
                 </div>
               </div>
               <div className="input">
-                <label for="name">Name</label>
+                <label for="name">Company</label>
                 <div>
                   <input
                     type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter your name ..."
+                    name="campany"
+                    id="campany"
+                    placeholder="Enter your campany ..."
                   />
                 </div>
               </div>
               <div className="bg-[#FF7757] text-white h-[100%] rounded-r-[20px] flex items-center gap-[2rem] px-[1.2rem]">
-                <button className="rounded-r-[20px] font-judul  text-[28px] text-start w-[60%] leading-8">
+                <button className="rounded-r-[20px] font-judul text-[21px] 2xl:text-[28px] lg:text-[21px]  text-start w-[60%] leading-8">
                   Connect Us
                 </button>
                 <img

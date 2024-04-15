@@ -11,7 +11,7 @@ const Footer = () => (
         <img src={logo} alt="hoobank" className=" ml-3 md:w-[150px] w-[90px] object-contain" />
         </div>
         <p className={`${styles.paragraph} mt-4 max-w-[312px] text-white`}>
-        Mastersystem Infotama strives to design and deliver the right solution to your company.
+        Astel strives to design and deliver the right solution to your company.
 
         </p>
       </div>

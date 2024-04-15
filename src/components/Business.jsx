@@ -33,7 +33,7 @@ const Business = () => {
         <p className={`${styles.paragraph} sub-title text-center`}>
           Check out our special offer and discounts
         </p>
-        <div className="flex md:grid-cols-3 grid grid-cols-1 gap-[2.5rem] mt-[1.5rem] mx-auto w-[88%]">
+        <div className="flex md:grid-cols-3 grid grid-cols-1 gap-[2.5rem] mt-[1.5rem] mx-auto xl:w-[88%] w-[100%]">
           {listSolution?.map((item, key) => {
             return (
               <div className="card bg-white pt-6 " id={key}>
@@ -44,13 +44,13 @@ const Business = () => {
                   />
                 </div>
                 <div className="p-6 grid px-8">
-                  <h3 className="text-[21px] font-bold text-[#767E86]">
+                  <h3 className="text-[21px] lg:text-[18px] font-bold text-[#767E86]">
                     {item.title.rendered}
                   </h3>
                   <p className="text-[14px] font-p">
                     {parse(item.content.rendered)}
                   </p>
-                  <button className="bg-[#FF7654] w-[30%] text-center py-[4px] text-[14px] text-white mt-2 justify-self-end">
+                  <button className="bg-[#FF7654] rounded-lg w-[30%] text-center py-[4px] text-[14px] text-white mt-2 justify-self-end">
                     Details
                   </button>
                 </div>

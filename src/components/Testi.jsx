@@ -28,9 +28,9 @@ const Testi = () => {
       <p className={`${styles.paragraph} sub-title`}>
       {getPageCust[0] ? getPageCust[0].title.rendered : 'loading'}
       </p>
-      <div className="flex md:grid-cols-2 grid grid-cols-1 mt-[1.5rem] mx-auto w-[100%]">
+      <div className="flex lg:grid-cols-2 grid grid-cols-1 mt-[1.5rem] mx-auto w-[100%]">
         <div className=" pt-6 ">
-          <div className="image w-[300px] sm:w-[440px]" >
+          <div className="image w-[300px] xl:w-[440px] md:w-[340px]" >
             <img src={getPageCust ? getPageCust[0]._embedded['wp:featuredmedia']['0'].source_url : ''} alt="" />   </div>
         </div>
         <div className="  pt-6 flex items-center">
