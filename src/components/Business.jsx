@@ -2,10 +2,24 @@ import styles, { layout } from "../style";
 import parse from "html-react-parser";
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
+import {  motion } from "framer-motion"
 
 const Business = () => {
   const [listSolution, setlistSolution] = useState([]);
-
+  const variants = {
+    initial :{
+      y : 100,
+      opacity :0
+    },
+    animate : {
+      y : 0,
+      opacity : 1,
+      transition :{
+        duration : 1,
+        straggerChildren :0.1 
+      }
+    }
+  }
   const logResult = useCallback(() => {
     let urlParter =
       "https://astelsolution.000webhostapp.com/wp-json/wp/v2/posts?categories=6&&.embed";
@@ -25,10 +39,10 @@ const Business = () => {
       id="product"
       className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} sm:flex-row flex-col sm:px-16 px-6  ${styles.paddingX}`}
     >
-      <div className="flex-1 flex flex-col">
-        <h2 className={`${styles.heading2} text-center`}>
+      <motion.div className="flex-1 flex flex-col"  variants={variants} initial = "initial" whileInView="animate">
+        <motion.h2 className={`${styles.heading2} text-center`} variants={variants}>
           Our Business & Solutions
-        </h2>
+        </motion.h2>
         <div className="w-[150px] line mx-auto"></div>
         <p className={`${styles.paragraph} sub-title text-center`}>
           Check out our special offer and discounts
@@ -58,7 +72,7 @@ const Business = () => {
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

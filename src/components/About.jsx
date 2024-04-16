@@ -3,10 +3,23 @@ import arrowUp from "../assets/arrow.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import parse from 'html-react-parser'
+import {  motion } from "framer-motion"
 
 const About = () => {
    const [about,setAbout] =useState([]);
-
+   const variants = {
+    initial :{
+      opacity :0
+    },
+    animate : {
+      y : 0,
+      opacity : 1,
+      transition :{
+        duration : 1,
+        straggerChildren :0.1 
+      }
+    }
+  }
    useEffect(()=>{
     let url = 'https://astelsolution.000webhostapp.com/wp-json/wp/v2/pages?slug=about&&.embed'
     axios.get(url).then((res)=>{
@@ -18,13 +31,13 @@ const About = () => {
       id="about"
       className={`${styles.flexCenter} ${styles.marginY} sm:flex-row flex-col  ${styles.paddingX}`}
     >
-      <div className="flex-1 flex flex-col w-[100%]">
-        <h2 className={styles.heading2}> Our Journey</h2>
-        <div className="w-[150px] line"></div>
-        <p className={`${styles.paragraph} sub-title`}>
+      <motion.div className="flex-1 flex flex-col w-[100%]" variants={variants} initial = "initial" whileInView="animate"  >
+        <motion.h2 className={styles.heading2}  variants={variants} > Our Journey</motion.h2>
+        <motion.div className="w-[150px] line"  variants={variants} ></motion.div>
+        <motion.p className={`${styles.paragraph} sub-title`}  variants={variants} >
           pioneer and innovator in the information technology business
-        </p>
-        <div className="flex md:flex-row flex-col  gap-[2.5rem]  md:gap-[4.5rem] mt-[1.5rem]">  
+        </motion.p>
+        <motion.div className="flex md:flex-row flex-col  gap-[2.5rem]  md:gap-[4.5rem] mt-[1.5rem]"  variants={variants} >  
           <div className="2xl:w-[530px] lg:w-[430px] lg:h-[430px] xl:w-[460px] xl:h-[480px] xs:w-[209px] s:w-[209px]  2xl:h-[560px] ">
           {about._embedded ?  <img
                 src={about._embedded['wp:featuredmedia']['0'].source_url}
@@ -50,8 +63,8 @@ const About = () => {
               />
             </a>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

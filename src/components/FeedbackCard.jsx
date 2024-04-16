@@ -3,17 +3,34 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 // Import Swiper styles
 import image2 from "../assets/avatar.png";
+import {  motion } from "framer-motion"
 
 import "swiper/css";
 import "swiper/css/navigation";
 import ratting from '../assets/Rating.png'
 
-const FeedbackCard = () => (
-  <section
+const FeedbackCard = () => {
+  const variants = {
+    initial :{
+      opacity :0,
+      x : 100,
+    },
+    animate : {
+      y : 0,
+      x : 0,
+      opacity : 1,
+      transition :{
+        duration : 1,
+        straggerChildren :0.1 
+      }
+    }
+  }
+  return (
+    <section
     id="review"
     className={`${styles.flexCenter} ${styles.marginY} sm:flex-row flex-col  ${styles.paddingX}`}
   >
-    <div
+    <motion.div variants={variants} initial = "initial" whileInView="animate"  
       className={`${styles.paragraph} konten bg-[] w-[100%] absolute sm:pl-[180px]  pl-[60px]`}
     >
       <Swiper
@@ -119,8 +136,11 @@ const FeedbackCard = () => (
     
        
       </Swiper>
-    </div>
+    </motion.div>
   </section>
 );
 
+}
+  
+ 
 export default FeedbackCard;

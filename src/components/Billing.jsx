@@ -2,6 +2,7 @@ import styles, { layout } from "../style";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 // Import Swiper styles
+import {  motion } from "framer-motion"
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,7 +12,20 @@ import parse from 'html-react-parser'
 const Billing = () => {
   const [partner,setpartner] =useState([]);
   const [lisrPartner,setlisrPartner] =useState([]);
-
+  const variants = {
+    initial :{
+      x : -500,
+      opacity :0
+    },
+    animate : {
+      x : 0,
+      opacity : 1,
+      transition :{
+        duration : 1,
+        straggerChildren :0.1 
+      }
+    }
+  }
   useEffect(()=>{
    let url = '  https://astelsolution.000webhostapp.com/wp-json/wp/v2/pages?slug=our-partner'
    axios.get(url).then((res)=>{
@@ -28,8 +42,7 @@ const Billing = () => {
       id="partner"
       className={`${styles.flexCenter} ${styles.marginY} sm:flex-row flex-col  ${styles.paddingX}`}
     >
-      <div className="flex-1 flex flex-col relative">
-
+      <motion.div className="flex-1 flex flex-col relative" variants={variants} initial = "initial" whileInView="animate">
         <div className="relative gap-[4.5rem] mt-[1.5rem] h-[100%] partner-wrap">
         <h2 className={styles.heading2}>  {partner.title ? partner.title.rendered :''}</h2>
         <div className="w-[150px] line"></div>
@@ -63,7 +76,7 @@ const Billing = () => {
            
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 };

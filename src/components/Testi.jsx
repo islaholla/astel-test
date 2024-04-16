@@ -4,13 +4,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { custPage } from "../redux/action/awardsAction";
 import parse from 'html-react-parser'
+import {  motion } from "framer-motion"
 
 const Testi = () => {
   const dispatch = useDispatch();
   const { getPageCust, getPageCustLoading } = useSelector(
     (state) => state.AwardsReducer
   );
-
+  const textVatian = {
+    initial :{
+      opacity :0
+    },
+    animate : {
+      opacity : 1,
+      transition :{
+        duration : 2,
+        straggerChildren :0.1 
+      }
+    }
+  }
   useEffect(() => {
     // paggil
     console.log("komponen didmount",getPageCust);
@@ -20,9 +32,9 @@ const Testi = () => {
     return (
       <section
     id="testi"
-    className={`${styles.flexCenter} ${styles.marginY} sm:flex-row flex-col  ${styles.paddingX}`}
+    className={`${styles.flexCenter} ${styles.marginY} sm:flex-row flex-col  ${styles.paddingX}` }
   >
-    <div className="flex-1 flex flex-col">
+    <motion.div className="flex-1 flex flex-col" variants={textVatian} initial = "initial" whileInView="animate">
       <h2 className={styles.heading2}> Customer Experiences</h2>
       <div className="w-[290px] line"></div>
       <p className={`${styles.paragraph} sub-title`}>
@@ -39,7 +51,7 @@ const Testi = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
        </section>
   );
 };

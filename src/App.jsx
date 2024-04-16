@@ -14,7 +14,7 @@ import CardDeal from "./components/CardDeal";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
 import SwiperHero from "./components/Swipper";
-
+import wa from './assets/whatsapp (2).png'
 const App = () => {
   const [breakSection,setBreak] =useState([]);
   useEffect(() => {
@@ -26,7 +26,7 @@ const App = () => {
   }, []);
   console.log('ini',breakSection);
   return (
-    <div className=" w-full overflow-hidden">
+    <div className=" w-full overflow-hidden relative z-0">
       <div
         className={`${styles.paddingX} ${styles.flexCenter} ${styles.boxWidth} navbar absolute z-10`}
       >
@@ -56,6 +56,11 @@ const App = () => {
           <Form />
           <Footer />
         </div>
+      </div>
+
+      {/* kontak */}
+      <div className="whatsapp">
+        <img src={wa} alt="" />
       </div>
     </div>
   );

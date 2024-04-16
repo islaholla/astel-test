@@ -4,13 +4,26 @@ import  close from "../assets/close.svg";
 import logo from "../assets/logo.svg";
 import menu from '../assets/menu.svg'
 import { navLinks } from "../constants";
+import {  motion } from "framer-motion"
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
-
+  const variants = {
+    initial :{
+      opacity :0
+    },
+    animate : {
+      y : 0,
+      opacity : 1,
+      transition :{
+        duration : 1,
+        straggerChildren :0.1 
+      }
+    }
+  }
   return (
-    <nav className="w-full flex py-6 justify-between items-center	">
+    <motion.nav className="w-full flex py-6 justify-between items-center	"  variants={variants} initial = "initial" animate="animate"  >
       <a
         className="text-white"
         target="_blank"
@@ -60,7 +73,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

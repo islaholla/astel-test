@@ -2,13 +2,27 @@ import styles from "../style";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { awardsList } from "../redux/action/awardsAction";
+import {  motion } from "framer-motion"
 
 const CardDeal = () => {
   const dispatch = useDispatch();
   const { getListAwards, getListAwardsLoading } = useSelector(
     (state) => state.AwardsReducer
   );
-
+  const textVatian = {
+    initial :{
+      x :500,
+      opacity :0
+    },
+    animate : {
+      x : 0,
+      opacity : 1,
+      transition :{
+        duration : 1,
+        straggerChildren :0.1 
+      }
+    }
+  }
   useEffect(() => {
     console.log("komponen didmount");
     dispatch(awardsList());
@@ -19,8 +33,8 @@ const CardDeal = () => {
       id="awards"
       className={`${styles.flexCenter} ${styles.marginY} sm:flex-row flex-col  ${styles.paddingX}`}
     >
-      <div className="flex-1 flex flex-col">
-        <h2 className={styles.heading2}> Our Awards</h2>
+      <motion.div className="flex-1 flex flex-col"  variants={textVatian} initial = "initial" whileInView="animate">
+        <motion.h2 className={styles.heading2}> Our Awards</motion.h2>
         <div className="w-[290px] line"></div>
         <p className={`${styles.paragraph} sub-title`}>
           Our quality of service has been accredited by the awards and
@@ -44,7 +58,7 @@ const CardDeal = () => {
             ? "loading"
             : "Data Tidak Tersedia"}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -477,3 +477,31 @@ section#review {
   height: 400px;
   width: 80%;
 }
+
+
+/* kontak */
+.whatsapp{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 2rem;
+  width: 50px;
+  animation: bounce 0.5s; 
+  animation-direction: alternate; 
+  animation-timing-function: ease-in-out; 
+  animation-iteration-count: infinite;  
+
+}
+@keyframes bounce { 
+  from { 
+      transform: translate3d(0, 10px, 0); 
+  } 
+  to { 
+      transform: translate3d(0, -10px, 0); 
+  } 
+} 
+
+.whatsapp img{
+  width: 100%;
+  object-fit: cover;
+}
