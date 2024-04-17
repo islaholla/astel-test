@@ -18,7 +18,7 @@ const Billing = () => {
 
   const variants = {
     initial :{
-      x : -500,
+      x : -50,
       opacity :0
     },
     animate : {

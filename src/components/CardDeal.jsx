@@ -11,7 +11,7 @@ const CardDeal = () => {
   );
   const textVatian = {
     initial :{
-      x :500,
+      x :50,
       opacity :0
     },
     animate : {
