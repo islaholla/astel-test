@@ -6,12 +6,16 @@ import {  motion } from "framer-motion"
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
 import parse from 'html-react-parser'
+import { useDispatch, useSelector } from "react-redux";
+import {  listPartnerPage, partnerPage } from "../redux/action/awardsAction";
 const Billing = () => {
-  const [partner,setpartner] =useState([]);
-  const [lisrPartner,setlisrPartner] =useState([]);
+  const dispatch = useDispatch();
+  const { getPagePartnerList, getPagePartner } = useSelector(
+    (state) => state.AwardsReducer
+  );
+
   const variants = {
     initial :{
       x : -500,
@@ -26,16 +30,11 @@ const Billing = () => {
       }
     }
   }
+
   useEffect(()=>{
-   let url = '  https://astelsolution.000webhostapp.com/wp-json/wp/v2/pages?slug=our-partner'
-   axios.get(url).then((res)=>{
-    setpartner(res.data[0])
-   })
-   let urlParter = 'https://astelsolution.000webhostapp.com/wp-json/wp/v2/posts?categories=4&&.embed'
-   axios.get(urlParter).then((res)=>{
-    setlisrPartner(res.data)
-   })
-  },[])
+   dispatch(partnerPage());
+   dispatch(listPartnerPage());
+  },[dispatch])
 
   return (
     <section
@@ -44,11 +43,11 @@ const Billing = () => {
     >
       <motion.div className="flex-1 flex flex-col relative" variants={variants} initial = "initial" whileInView="animate">
         <div className="relative gap-[4.5rem] mt-[1.5rem] h-[100%] partner-wrap">
-        <h2 className={styles.heading2}>  {partner.title ? partner.title.rendered :''}</h2>
+        <h2 className={styles.heading2}>{getPagePartner ? getPagePartner.title.rendered : ''} </h2>
         <div className="w-[150px] line"></div>
           <div className="w-[100%] sm:w-[34%]">
             <p className={`${styles.paragraph} sub-title`}>
-              {partner.content ? parse( partner.content.rendered):''}
+              {getPagePartner.content ? parse( getPagePartner.content.rendered):''}
             </p>
           </div>
           <div
@@ -66,12 +65,12 @@ const Billing = () => {
               navigation={true}
               modules={[Autoplay, Navigation]}
             >
-              {lisrPartner?.map((item,key)=>{
+              { getPagePartnerList ?  getPagePartnerList?.map((item,key)=>{
                   return(
                     <SwiperSlide> <img id={key} className="w-[100%] object-cover " src={item._embedded['wp:featuredmedia']['0'].source_url}  alt="" />
                     </SwiperSlide>
                   )
-              })}
+              }): ''}
             </Swiper>
            
           </div>

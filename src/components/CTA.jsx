@@ -1,5 +1,4 @@
 import styles from "../style";
-import Button from "./Button";
 
 const CTA = (teks) => (
   <section className={`${styles.flexCenter} ${styles.padding} sm:flex-row flex-col bg-[#FF7757] text-white xl:text-[32px] text-[28px]  box-shadow mt-[8rem]` }>

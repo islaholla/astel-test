@@ -6,7 +6,7 @@ import "@splidejs/react-splide/css/sea-green";
 import "@splidejs/react-splide/css/core";
 import { useState } from "react";
 import arrowUp from "../assets/arrow-white.svg";
-import {  motion } from "framer-motion"
+import {  delay, motion } from "framer-motion"
 
 const SwiperHero = ({ slide }) => {
   const [active, setActive] = useState(false);
@@ -23,6 +23,7 @@ const SwiperHero = ({ slide }) => {
       opacity : 1,
       transition :{
         duration : 1,
+        delay : 3.5,
         straggerChildren :0.1 
       }
     }

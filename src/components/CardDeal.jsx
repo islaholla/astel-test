@@ -24,7 +24,6 @@ const CardDeal = () => {
     }
   }
   useEffect(() => {
-    console.log("komponen didmount");
     dispatch(awardsList());
   }, [dispatch]);
 

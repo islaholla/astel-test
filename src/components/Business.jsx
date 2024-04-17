@@ -1,11 +1,12 @@
-import styles, { layout } from "../style";
+import styles from "../style";
 import parse from "html-react-parser";
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import {  motion } from "framer-motion"
+import { useDispatch, useSelector } from "react-redux";
+import { bisnissPage } from "../redux/action/awardsAction";
 
 const Business = () => {
-  const [listSolution, setlistSolution] = useState([]);
   const variants = {
     initial :{
       y : 100,
@@ -20,20 +21,14 @@ const Business = () => {
       }
     }
   }
-  const logResult = useCallback(() => {
-    let urlParter =
-      "https://astelsolution.000webhostapp.com/wp-json/wp/v2/posts?categories=6&&.embed";
-    axios.get(urlParter).then((res) => {
-      setlistSolution(res.data);
-      console.log("the list", listSolution);
-    });
-  }, [setlistSolution]);
-
+  const dispatch = useDispatch();
+  const { getPageBisnis } = useSelector(
+    (state) => state.AwardsReducer
+  );
+ 
   useEffect(() => {
-    logResult();
-  }, [logResult]);
-
-  console.log(listSolution);
+    dispatch(bisnissPage());
+  }, [dispatch]);
   return (
     <section
       id="product"
@@ -41,14 +36,14 @@ const Business = () => {
     >
       <motion.div className="flex-1 flex flex-col"  variants={variants} initial = "initial" whileInView="animate">
         <motion.h2 className={`${styles.heading2} text-center`} variants={variants}>
-          Our Business & Solutions
+          Our Business & Solutions {getPageBisnis? 'ok': 'no'}
         </motion.h2>
         <div className="w-[150px] line mx-auto"></div>
         <p className={`${styles.paragraph} sub-title text-center`}>
           Check out our special offer and discounts
         </p>
         <div className="flex md:grid-cols-3 grid grid-cols-1 gap-[2.5rem] mt-[1.5rem] mx-auto xl:w-[88%] w-[100%]">
-          {listSolution?.map((item, key) => {
+          {getPageBisnis ? getPageBisnis?.map((item, key) => {
             return (
               <div className="card bg-white pt-6 " id={key}>
                 <div className="image">
@@ -70,7 +65,7 @@ const Business = () => {
                 </div>
               </div>
             );
-          })}
+          }) : ''}
         </div>
       </motion.div>
     </section>

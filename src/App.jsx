@@ -15,18 +15,30 @@ import Footer from "./components/Footer";
 import Form from "./components/Form";
 import SwiperHero from "./components/Swipper";
 import wa from './assets/whatsapp (2).png'
+import PreLoader from "./components/loading/PreLoader";
+import { useDispatch, useSelector } from "react-redux";
+import { pageBreak } from "./redux/action/awardsAction";
 const App = () => {
   const [breakSection,setBreak] =useState([]);
+  const dispatch = useDispatch();
+  const {getPageBreak } = useSelector(
+    (state) => state.AwardsReducer
+  );
+
   useEffect(() => {
     let url =
       "https://astelsolution.000webhostapp.com/wp-json/wp/v2/posts?categories=5";
     axios.get(url).then((res) => {
       setBreak(res.data[0]);
     });
-  }, []);
-  console.log('ini',breakSection);
+    dispatch(pageBreak());
+  }, [dispatch]);
   return (
-    <div className=" w-full overflow-hidden relative z-0">
+    <div className="index">
+      <div className="loading">
+        <PreLoader/>
+      </div>
+      <div className=" w-full overflow-hidden relative z-0">
       <div
         className={`${styles.paddingX} ${styles.flexCenter} ${styles.boxWidth} navbar absolute z-10`}
       >
@@ -47,10 +59,10 @@ const App = () => {
           {/* <Stats /> */}
           <About />
           <Billing />
-          <CTA paragrap= {breakSection.title ? breakSection.title.rendered :''} />
+          <CTA paragrap= {getPageBreak[0] ? getPageBreak[0].title.rendered :''} />
           <Business />
           <CardDeal />
-          <CTA paragrap={breakSection.title ? breakSection.title.rendered :''} />
+          <CTA paragrap= {getPageBreak[1] ? getPageBreak[1].title.rendered :''} />
           <Testi />
           <FeedbackCard />
           <Form />
@@ -61,6 +73,7 @@ const App = () => {
       {/* kontak */}
       <div className="whatsapp">
         <img src={wa} alt="" />
+      </div>
       </div>
     </div>
   );
