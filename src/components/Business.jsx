@@ -36,7 +36,7 @@ const Business = () => {
     >
       <motion.div className="flex-1 flex flex-col"  variants={variants} initial = "initial" whileInView="animate">
         <motion.h2 className={`${styles.heading2} text-center`} variants={variants}>
-          Our Business & Solutions {getPageBisnis? 'ok': 'no'}
+          Our Business & Solutions 
         </motion.h2>
         <div className="w-[150px] line mx-auto"></div>
         <p className={`${styles.paragraph} sub-title text-center`}>
