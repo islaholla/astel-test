@@ -37,7 +37,6 @@ const FeedbackCard = () => {
         spaceBetween={50}
         loop={true}
         slidesPerView={3}
-    
         navigation={true}
         modules={[Autoplay, Navigation]}
       >

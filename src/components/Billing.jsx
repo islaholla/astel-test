@@ -42,7 +42,7 @@ const Billing = () => {
       className={`${styles.flexCenter} ${styles.marginY} sm:flex-row flex-col  ${styles.paddingX}`}
     >
       <motion.div className="flex-1 flex flex-col relative" variants={variants} initial = "initial" whileInView="animate">
-        <div className="relative gap-[4.5rem] mt-[1.5rem] h-[100%] partner-wrap">
+        <div className=" gap-[4.5rem] mt-[1.5rem] h-[100%] partner-wrap">
         <h2 className={styles.heading2}>{getPagePartner ? getPagePartner.title.rendered : ''} </h2>
         <div className="w-[150px] line"></div>
           <div className="w-[100%] sm:w-[34%]">
@@ -54,16 +54,11 @@ const Billing = () => {
             className={`${styles.paragraph} konten  w-[100%] sm:w-[80%] absolute `}
           >
            <Swiper
-              spaceBetween={50}
-              loop={true}
-              lazy={true}
-              slidesPerView={4}
-              autoplay={{
-                delay:1500,
-                disableOnInteraction: false,
-              }}
-              navigation={true}
-              modules={[Autoplay, Navigation]}
+               spaceBetween={50}
+               loop={true}
+               slidesPerView={4}
+               navigation={true}
+               modules={[Autoplay, Navigation]}
             >
               { getPagePartnerList ?  getPagePartnerList?.map((item,key)=>{
                   return(

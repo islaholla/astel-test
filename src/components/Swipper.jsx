@@ -10,9 +10,7 @@ import {  delay, motion } from "framer-motion"
 
 const SwiperHero = ({ slide }) => {
   const [active, setActive] = useState(false);
-  const handleFlip = () => {
-    setActive(!active);
-  };
+
   const textVatian = {
     initial :{
       x :50,
@@ -34,6 +32,9 @@ const SwiperHero = ({ slide }) => {
         aria-label="My Favorite Images"
         options={{
           rewind: true,
+          start  : 3,
+          autoplay: true,
+          speed:1000,
           direction: "ttb",
           height: "80vh",
           interval: 2600,
