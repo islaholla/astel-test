@@ -108,7 +108,7 @@ const SwiperHero = ({ slide }) => {
           </div>
         </SplideSlide>
         <SplideSlide>
-        <div className="hero-1 bg-[#000]" >
+        <div className="hero-1" >
             <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
               <motion.h1 className="font-judul" variants={textVatian} > 
                 Start your unforgettable Digital journey with us
@@ -174,7 +174,7 @@ const SwiperHero = ({ slide }) => {
           </div>
         </SplideSlide>
         <SplideSlide>
-        <div className="hero-1 bg-[#000]" >
+        <div className="hero-1 " >
             <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
               <motion.h1 className="font-judul" variants={textVatian} > 
                 Start your unforgettable Digital journey with us
@@ -240,7 +240,7 @@ const SwiperHero = ({ slide }) => {
           </div>
         </SplideSlide>
         <SplideSlide>
-        <div className="hero-1 bg-[#000]" >
+        <div className="hero-1 " >
             <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
               <motion.h1 className="font-judul" variants={textVatian} > 
                 Start your unforgettable Digital journey with us
