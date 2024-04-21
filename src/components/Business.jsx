@@ -5,8 +5,13 @@ import axios from "axios";
 import {  motion } from "framer-motion"
 import { useDispatch, useSelector } from "react-redux";
 import { bisnissPage } from "../redux/action/awardsAction";
+import Modal from "./modal/Modal";
+
 
 const Business = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [konten, setKonten] = useState([]);
+
   const variants = {
     initial :{
       y : 100,
@@ -28,13 +33,15 @@ const Business = () => {
  
   useEffect(() => {
     dispatch(bisnissPage());
+    console.log('ini', getPageBisnis[isOpen]);
+    console.log(isOpen);
   }, [dispatch]);
   return (
     <section
       id="product"
       className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} sm:flex-row flex-col sm:px-16 px-6  ${styles.paddingX}`}
     >
-      <motion.div className="flex-1 flex flex-col"  variants={variants} initial = "initial" whileInView="animate">
+        <motion.div className="flex-1 flex flex-col"  variants={variants} initial = "initial" whileInView="animate">
         <motion.h2 className={`${styles.heading2} text-center`} variants={variants}>
           Our Business & Solutions 
         </motion.h2>
@@ -56,17 +63,23 @@ const Business = () => {
                   <h3 className="text-[21px] lg:text-[18px] font-bold text-[#767E86]">
                     {item.title.rendered}
                   </h3>
+                  {/* parse(item.content.rendered) */}
                   <p className="text-[14px] font-p">
-                    {parse(item.content.rendered)}
+                    {item.content.rendered.length  > 100 ? parse(item.content.rendered.substring(0, 100)) : parse(item.content.rendered) }
                   </p>
-                  <button className="bg-[#FF7654] rounded-lg w-[30%] text-center py-[4px] text-[14px] text-white mt-2 justify-self-end">
+                  <button onClick={ () => { 
+                    setIsOpen(true)
+                    setKonten([item.title.rendered,parse(item.content.rendered)])
+                    }} className="bg-[#FF7654] rounded-lg w-[30%] text-center py-[4px] text-[14px] text-white mt-2 justify-self-end">
                     Details
                   </button>
+
                 </div>
               </div>
             );
           }) : ''}
         </div>
+        {isOpen && <Modal konten={konten[1]} title={konten[0]} setIsOpen={setIsOpen}  />}
       </motion.div>
     </section>
   );

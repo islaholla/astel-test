@@ -34,7 +34,7 @@ const SwiperHero = ({ slide }) => {
           rewind: true,
           start  : 3,
           autoplay: true,
-          speed:1000,
+          speed:800,
           direction: "ttb",
           height: "80vh",
           interval: 2600,
