@@ -1,5 +1,5 @@
 import styles from "../style";
-import  logo  from "../assets/logo.svg";
+import  logo  from "../assets/astel_logo_white.png";
 
 import { footerLinks, socialMedia } from "../constants";
 
@@ -12,13 +12,12 @@ const Footer = () => (
         </div>
         <p className={`${styles.paragraph} mt-4 max-w-[312px] text-white`}>
         Astel strives to design and deliver the right solution to your company.
-
         </p>
       </div>
 
       <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">
-        {footerLinks.map((footerlink) => (
-          <div key={footerlink.title} className={`flex flex-col ss:my-0 my-4 min-w-[150px]`}>
+        {footerLinks.map((footerlink,index) => (
+          <div key={index} className={`flex flex-col ss:my-0 my-4 min-w-[150px]`}>
             <h4 className="font-poppins font-medium text-[18px] leading-[27px]">
               {footerlink.title}
             </h4>
@@ -46,7 +45,7 @@ const Footer = () => (
 
       <div className="flex flex-row md:mt-0 mt-6">
         {socialMedia.map((social, index) => (
-          <div className="wrap-image">
+          <div className="wrap-image" key={index}>
             <img
             key={social.id}
             src={social.icon}

@@ -25,7 +25,6 @@ const Testi = () => {
   }
   useEffect(() => {
     // paggil
-    console.log("komponen didmount",getPageCust);
     dispatch(custPage());
   }, [dispatch]);
 

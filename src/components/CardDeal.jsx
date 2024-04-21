@@ -41,9 +41,9 @@ const CardDeal = () => {
         </p>
         <div className="flex md:grid-cols-4 grid grid-cols-1 gap-[3.5rem] mt-[1.5rem] mx-auto lg:w-[90%] w-[80%] 2xl:w-[80%]">
           {getListAwards
-            ? getListAwards?.map((item, key) => {
+            ? getListAwards?.map((item, index) => {
                 return (
-                  <div className="card bg-white pt-6 " id={key}>
+                  <div className="card bg-white pt-6 " key={index}>
                     <div className="image">
                       <img
                         src={item._embedded["wp:featuredmedia"]["0"].source_url}

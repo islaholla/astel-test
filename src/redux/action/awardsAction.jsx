@@ -51,7 +51,6 @@ export const aboutPage = () => {
 export const bisnissPage = () => {
   return (dispatch) => {
     // loading
-    console.log("loading bis");
     dispatch({
       type: GET_PAGE_BISNIS,
       payload: {
@@ -199,7 +198,6 @@ export const custPage = () => {
         });
       })
       .catch((error) => {
-        console.log("gagal");
         dispatch({
           type: GET_PAGE_CUST,
           payload: {
@@ -240,7 +238,6 @@ export const partnerPage = () => {
         });
       })
       .catch((error) => {
-        console.log("gagal");
         dispatch({
           type: GET_PAGE_PARTNER,
           payload: {
@@ -281,7 +278,6 @@ export const listPartnerPage = () => {
         });
       })
       .catch((error) => {
-        console.log("gagal");
         dispatch({
           type: GET_PAGE_PARTNER_LIST,
           payload: {

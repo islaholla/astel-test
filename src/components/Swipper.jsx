@@ -4,12 +4,29 @@ import "@splidejs/react-splide/css/skyblue";
 import "@splidejs/react-splide/css/sea-green";
 // or only core styles
 import "@splidejs/react-splide/css/core";
-import { useState } from "react";
 import arrowUp from "../assets/arrow-white.svg";
-import {  delay, motion } from "framer-motion"
+import {   motion } from "framer-motion"
+import emailjs from '@emailjs/browser';
+import { useRef } from "react";
 
 const SwiperHero = ({ slide }) => {
-  const [active, setActive] = useState(false);
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm('service_u7p333a', 'template_87qzy6n',form.current,{
+        publicKey: 'mPsQ83Cw6-bBVZYSt',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error);
+        },
+      );
+  };
 
   const textVatian = {
     initial :{
@@ -45,13 +62,13 @@ const SwiperHero = ({ slide }) => {
           <div className="hero-1" >
             <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
               <motion.h1 className="font-judul" variants={textVatian} > 
-                Start your unforgettable Digital journey with us
+                Start your unhtmlForgettable Digital journey with us
               </motion.h1>
               <p>The best digital for your bisniss begins now</p>
             </motion.div>
-            <div className="contact-hero bg-white w-[80%]   2xl:w-[70%] h-[353px] xl:h-[123px]  sm:h-[103px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px] ">
+            <form ref={form} onSubmit={sendEmail} className="contact-hero bg-white w-[80%]   2xl:w-[70%] h-[353px] xl:h-[123px]  sm:h-[103px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px] ">
               <div  className="input">
-                <label for="name">Name</label>
+                <label htmlFor="name">Name</label>
                 <div>
                   <input
                     type="text"
@@ -62,7 +79,7 @@ const SwiperHero = ({ slide }) => {
                 </div>
               </div>
               <div className="input">
-                <label for="name">Email</label>
+                <label htmlFor="email">Email</label>
                 <div>
                   <input
                     type="text"
@@ -73,7 +90,7 @@ const SwiperHero = ({ slide }) => {
                 </div>
               </div>
               <div className="input">
-                <label for="name">Phone</label>
+                <label htmlFor="phone">Phone</label>
                 <div>
                   <input
                     type="number"
@@ -84,7 +101,7 @@ const SwiperHero = ({ slide }) => {
                 </div>
               </div>
               <div className="input">
-                <label for="name">Company</label>
+                <label htmlFor="name">Company</label>
                 <div>
                   <input
                     type="text"
@@ -104,205 +121,41 @@ const SwiperHero = ({ slide }) => {
                   className="w-[23px] h-[23px] object-contain"
                 />
               </div>
-            </div>
+            </form>
+
           </div>
         </SplideSlide>
         <SplideSlide>
         <div className="hero-1" >
             <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
               <motion.h1 className="font-judul" variants={textVatian} > 
-                Start your unforgettable Digital journey with us
+               Together We Develop The Future
               </motion.h1>
-              <p>The best digital for your bisniss begins now</p>
+              <p>pioneer and innovator in the Information Technology business</p>
             </motion.div>
-            <div className="contact-hero bg-white w-[80%]   2xl:w-[70%] h-[353px] xl:h-[123px]  sm:h-[103px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px] ">
-              <div  className="input">
-                <label for="name">Name</label>
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter your name ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label for="name">Email</label>
-                <div>
-                  <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    placeholder="Enter your email ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label for="name">Phone</label>
-                <div>
-                  <input
-                    type="number"
-                    name="phone"
-                    id="phone"
-                    placeholder="Enter your phone ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label for="name">Company</label>
-                <div>
-                  <input
-                    type="text"
-                    name="campany"
-                    id="campany"
-                    placeholder="Enter your campany ..."
-                  />
-                </div>
-              </div>
-              <div className="bg-[#FF7757] text-white h-[100%] rounded-r-[20px] flex items-center gap-[2rem] px-[1.2rem]">
-                <button className="rounded-r-[20px] font-judul text-[21px] 2xl:text-[28px] lg:text-[21px]  text-start w-[60%] leading-8">
-                  Connect Us
-                </button>
-                <img
-                  src={arrowUp}
-                  alt="arrow-up"
-                  className="w-[23px] h-[23px] object-contain"
-                />
-              </div>
-            </div>
+            
           </div>
         </SplideSlide>
         <SplideSlide>
         <div className="hero-1 " >
             <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
               <motion.h1 className="font-judul" variants={textVatian} > 
-                Start your unforgettable Digital journey with us
+              Astel offers decades of experience 
               </motion.h1>
-              <p>The best digital for your bisniss begins now</p>
+              <p>help your organization to stay on top of the market trends and strengthening </p>
             </motion.div>
-            <div className="contact-hero bg-white w-[80%]   2xl:w-[70%] h-[353px] xl:h-[123px]  sm:h-[103px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px] ">
-              <div  className="input">
-                <label for="name">Name</label>
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter your name ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label for="name">Email</label>
-                <div>
-                  <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    placeholder="Enter your email ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label for="name">Phone</label>
-                <div>
-                  <input
-                    type="number"
-                    name="phone"
-                    id="phone"
-                    placeholder="Enter your phone ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label for="name">Company</label>
-                <div>
-                  <input
-                    type="text"
-                    name="campany"
-                    id="campany"
-                    placeholder="Enter your campany ..."
-                  />
-                </div>
-              </div>
-              <div className="bg-[#FF7757] text-white h-[100%] rounded-r-[20px] flex items-center gap-[2rem] px-[1.2rem]">
-                <button className="rounded-r-[20px] font-judul text-[21px] 2xl:text-[28px] lg:text-[21px]  text-start w-[60%] leading-8">
-                  Connect Us
-                </button>
-                <img
-                  src={arrowUp}
-                  alt="arrow-up"
-                  className="w-[23px] h-[23px] object-contain"
-                />
-              </div>
-            </div>
+
           </div>
         </SplideSlide>
         <SplideSlide>
-        <div className="hero-1 " >
+        <div className="hero-1  " >
             <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
               <motion.h1 className="font-judul" variants={textVatian} > 
-                Start your unforgettable Digital journey with us
-              </motion.h1>
-              <p>The best digital for your bisniss begins now</p>
+              Technology and Telecommunication solutions
+                            </motion.h1>
+              <p>We provide a complete range of technology and telecommunication solutions</p>
             </motion.div>
-            <div className="contact-hero bg-white w-[80%]   2xl:w-[70%] h-[353px] xl:h-[123px]  sm:h-[103px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px] ">
-              <div  className="input">
-                <label for="name">Name</label>
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter your name ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label for="name">Email</label>
-                <div>
-                  <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    placeholder="Enter your email ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label for="name">Phone</label>
-                <div>
-                  <input
-                    type="number"
-                    name="phone"
-                    id="phone"
-                    placeholder="Enter your phone ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label for="name">Company</label>
-                <div>
-                  <input
-                    type="text"
-                    name="campany"
-                    id="campany"
-                    placeholder="Enter your campany ..."
-                  />
-                </div>
-              </div>
-              <div className="bg-[#FF7757] text-white h-[100%] rounded-r-[20px] flex items-center gap-[2rem] px-[1.2rem]">
-                <button className="rounded-r-[20px] font-judul text-[21px] 2xl:text-[28px] lg:text-[21px]  text-start w-[60%] leading-8">
-                  Connect Us
-                </button>
-                <img
-                  src={arrowUp}
-                  alt="arrow-up"
-                  className="w-[23px] h-[23px] object-contain"
-                />
-              </div>
-            </div>
+          
           </div>
         </SplideSlide>
       </Splide>

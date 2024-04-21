@@ -1,7 +1,7 @@
 const styles = {
   boxWidth: "xl:max-w-full w-full",
 
-  heading3: "font-judul font-semibold xs:text-[38px] text-[30px] text-black xs:leading-[60.8px] leading-[50.8px] w-full text-center",
+  heading3: "font-judul font-semibold xs:text-[38px] text-[30px] text-black xs:leading-[60.8px] leading-[50.8px] w-full ",
   heading2: "font-judul font-semibold xs:text-[48px] text-[40px] text-black xs:leading-[76.8px] leading-[66.8px] w-full",
   paragraph: "font-p font-normal text-black  text-[14px] xl:text-[18px] leading-[30.8px]",
 

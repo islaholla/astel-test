@@ -312,6 +312,30 @@
   text-align: end;
   padding-right: 5rem;
 }
+.swipperHero li#splide01-slide02  .hero-1 .teks {
+  width: 70%;
+  margin-top: 0;
+  justify-self: center;
+  align-self: center;
+  padding-right: 0;
+  text-align: center;
+}
+.swipperHero li#splide01-slide03  .hero-1 .teks {
+  width: 70%;
+  margin-top: 0;
+  justify-self: start;
+  padding-left: 5rem;
+  align-self: center;
+  text-align: center;
+}
+.swipperHero li#splide01-slide04  .hero-1 .teks {
+  width: 60%;
+  margin-top: 10rem;
+  justify-self: end;
+  align-self: center;
+  text-align: end;
+  padding-right: 5rem;
+}
 
 .swipperHero .hero-1 .teks h1 {
   line-height: 1;

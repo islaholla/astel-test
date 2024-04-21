@@ -11,7 +11,6 @@ import Modal from "./modal/Modal";
 const Business = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [konten, setKonten] = useState([]);
-
   const variants = {
     initial :{
       y : 100,
@@ -33,8 +32,6 @@ const Business = () => {
  
   useEffect(() => {
     dispatch(bisnissPage());
-    console.log('ini', getPageBisnis[isOpen]);
-    console.log(isOpen);
   }, [dispatch]);
   return (
     <section
@@ -50,9 +47,9 @@ const Business = () => {
           Check out our special offer and discounts
         </p>
         <div className="flex md:grid-cols-3 grid grid-cols-1 gap-[2.5rem] mt-[1.5rem] mx-auto xl:w-[88%] w-[100%]">
-          {getPageBisnis ? getPageBisnis?.map((item, key) => {
+          {getPageBisnis ? getPageBisnis?.map((item, index) => {
             return (
-              <div className="card bg-white pt-6 " id={key}>
+              <div className="card bg-white pt-6 " key={index}>
                 <div className="image">
                   <img
                     src={item._embedded["wp:featuredmedia"]["0"].source_url}

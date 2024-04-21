@@ -29,13 +29,13 @@ export const footerLinks = [
     links: [
       {
         id : 1,
-        name: "Sudirman 7.8, Tower 1, 25th Floor ",
+        name: "Jl. Pintu Air Raya",
         target:"_blank",
         link: "",
       },
       {
         id : 2,
-        name: "Jl. Jend. Sudirman Kav. 7-8,",
+        name: " No. 2F Jakarta 10710, Indonesia",
         target:"_blank",
         link: "",
       },
@@ -47,34 +47,9 @@ export const footerLinks = [
       },
       {
         id : 4,
-        name: "+62 852 9000 3973",
+        name: "+62213867575",
         target:"_blank",
         link: "https://api.whatsapp.com/send?phone=6285290003973&text=Hi%20Mastersystem..%20Saya%20ingin%20tahu%20informasi%20mengenai%20produk%20IBM%20Mastersystem.%20Tolong%20respon%20chat%20saya%20ya..&source=&data=",
-      }
-    ],
-  },
-  {
-    title: "Branch Office Surabaya",
-    links: [
-      {
-        id: "surabaya-1",
-        name: "Darmo Galeria Center,",
-        link: "#",
-      },
-      {
-        id: "surabaya-2",
-        name: "Jl. Mayjen Sungkono No.75, Gn. Sari,",
-        link: "#",
-      },
-      {
-        id: "surabaya-3",
-        name: "Kec. Dukuhpakis, Kota SBY, ",
-        link: "#",
-      },
-      {
-        id: "surabaya-4",
-        name: "Jawa Timur 60224.",
-        link: "#",
       }
     ],
   },
