@@ -62,7 +62,7 @@ const SwiperHero = ({ slide }) => {
           <div className="hero-1" >
             <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
               <motion.h1 className="font-judul" variants={textVatian} > 
-                Start your unhtmlForgettable Digital journey with us
+                Start your Forgettable Digital journey with us
               </motion.h1>
               <p>The best digital for your bisniss begins now</p>
             </motion.div>
