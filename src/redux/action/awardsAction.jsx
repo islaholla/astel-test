@@ -22,7 +22,7 @@ export const aboutPage = () => {
     // get Api
     axios({
       method: "GET",
-      url: "https://astelsolution.000webhostapp.com/wp-json/wp/v2/pages?slug=about&&.embed",
+      url: "https://api.astelst.com/wp-json/wp/v2/pages?slug=about-us&&.embed",
       timeout: 120000,
     })
       .then((Response) => {
@@ -62,7 +62,7 @@ export const bisnissPage = () => {
     // get Api
     axios({
       method: "GET",
-      url: "https://astelsolution.000webhostapp.com/wp-json/wp/v2/posts?categories=6&&.embed",
+      url: "https://api.astelst.com/wp-json/wp/v2/posts?categories=5&&.embed",
       timeout: 120000,
     })
       .then((Response) => {
@@ -102,7 +102,7 @@ export const pageBreak = () => {
     // get Api
     axios({
       method: "GET",
-      url: "https://astelsolution.000webhostapp.com/wp-json/wp/v2/posts?categories=5",
+      url: "https://api.astelst.com/wp-json/wp/v2/posts?categories=4&&.embed",
       timeout: 120000,
     })
       .then((Response) => {
@@ -142,7 +142,7 @@ export const awardsList = () => {
     // get Api
     axios({
       method: "GET",
-      url: "https://astelsolution.000webhostapp.com/wp-json/wp/v2/posts?categories=7&&.embed",
+      url: "https://api.astelst.com/wp-json/wp/v2/posts?categories=6&&.embed",
       timeout: 120000,
     })
       .then((Response) => {
@@ -183,7 +183,7 @@ export const custPage = () => {
     // get Api
     axios({
       method: "GET",
-      url: "https://astelsolution.000webhostapp.com/wp-json/wp/v2/pages?slug=customer&&.embed",
+      url: "https://api.astelst.com/wp-json/wp/v2/pages?slug=customer&&.embed",
       timeout: 120000,
     })
       .then((Response) => {
@@ -223,7 +223,7 @@ export const partnerPage = () => {
     // get Api
     axios({
       method: "GET",
-      url: "https://astelsolution.000webhostapp.com/wp-json/wp/v2/pages?slug=our-partner",
+      url: "https://api.astelst.com/wp-json/wp/v2/pages?slug=partner",
       timeout: 120000,
     })
       .then((Response) => {
@@ -263,7 +263,7 @@ export const listPartnerPage = () => {
     // get Api
     axios({
       method: "GET",
-      url: "https://astelsolution.000webhostapp.com/wp-json/wp/v2/posts?categories=4&&.embed",
+      url: "https://api.astelst.com/wp-json/wp/v2/posts?categories=3&&.embed",
       timeout: 120000,
     })
       .then((Response) => {
