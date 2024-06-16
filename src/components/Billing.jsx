@@ -54,7 +54,7 @@ const Billing = () => {
             <div class="flex flex-wrap  items-baseline">
               {getPagePartnerList ? getPagePartnerList?.map((item, key) => {
                 return (
-                  <div class=" w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-4 flex flex-col  h-[50px] "><img src={item._embedded['wp:featuredmedia']['0'].source_url} alt="Gambar 5"/><a className={`${styles.paragraph}  text-[12px] xl:text-[12px] lg:text-[14px]`} target="_blank" href={item.content ? item.content.rendered : '#'}> Learn More</a></div>
+                  <div class=" w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-4 flex flex-col  h-[80px] "><img src={item._embedded['wp:featuredmedia']['0'].source_url} alt="Gambar 5"/><a className={`${styles.paragraph}  text-[12px] xl:text-[12px] lg:text-[14px]`} target="_blank" href={item.content ? item.content.rendered : '#'}> Learn More</a></div>
                 )
               }) : ''}
 
