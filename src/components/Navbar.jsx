@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import  close from "../assets/close.svg";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import menu from '../assets/menu.svg'
 import { navLinks } from "../constants";
 import {  motion } from "framer-motion"

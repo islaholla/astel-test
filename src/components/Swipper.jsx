@@ -44,7 +44,7 @@ const SwiperHero = ({ slide }) => {
     }
   }
   return (
-    <>
+    <div className="bg-[#000]">
       <Splide
         aria-label="My Favorite Images"
         options={{
@@ -59,7 +59,7 @@ const SwiperHero = ({ slide }) => {
         }}
       >
         <SplideSlide>
-          <div className="hero-1" >
+          <div className="hero-1 " >
             <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
               <motion.h1 className="font-judul" variants={textVatian} > 
                 Start your Forgettable Digital journey with us
@@ -159,7 +159,7 @@ const SwiperHero = ({ slide }) => {
           </div>
         </SplideSlide>
       </Splide>
-    </>
+    </div>
   );
 };
 

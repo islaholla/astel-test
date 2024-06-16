@@ -363,25 +363,25 @@
   height: 100%;
 }
 .swipperHero li#splide01-slide01 {
-  background: url(assets/background-hero.png);
+  background: url(assets/exp-1.png);
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .swipperHero li#splide01-slide02 {
-  background: url(assets/back-2.jpg);
+  background: url(assets/back.png);
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .swipperHero li#splide01-slide03 {
-  background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+  background: url(assets/exp-5.jpg);
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .swipperHero li#splide01-slide04 {
-  background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);  background-position: right;
+  background: url(assets/exp-2.png);
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
