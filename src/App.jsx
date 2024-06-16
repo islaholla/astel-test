@@ -1,6 +1,5 @@
 import styles from "./style";
 import './index.css';
-
 import Testi from "./components/Testi";
 import FeedbackCard from "./components/FeedbackCard";
 import { useEffect, useState } from "react";
@@ -19,18 +18,11 @@ import PreLoader from "./components/loading/PreLoader";
 import { useDispatch, useSelector } from "react-redux";
 import { pageBreak } from "./redux/action/awardsAction";
 const App = () => {
-  const [breakSection,setBreak] =useState([]);
   const dispatch = useDispatch();
   const {getPageBreak } = useSelector(
     (state) => state.AwardsReducer
   );
-
   useEffect(() => {
-    let url =
-      "https://astelsolution.000webhostapp.com/wp-json/wp/v2/posts?categories=5";
-    axios.get(url).then((res) => {
-      setBreak(res.data[0]);
-    });
     dispatch(pageBreak());
   }, [dispatch]);
   return (

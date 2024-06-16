@@ -13,7 +13,20 @@
   );
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
+::-webkit-scrollbar {
+  width: 10px; /* lebar scrollbar */
+}
 
+/* Thumb (bagian yang dapat digerakkan) */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* warna background thumb */
+  border-radius: 5px; /* sudut bulatan thumb */
+}
+
+/* Track (bagian latar belakang scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* warna latar belakang track */
+} 
 * {
   scroll-behavior: smooth;
 }
