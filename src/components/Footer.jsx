@@ -1,5 +1,5 @@
 import styles from "../style";
-import  logo  from "../assets/astel_logo_white.png";
+import  logo  from "../assets/logo-astel-white.png";
 
 import { footerLinks, socialMedia } from "../constants";
 
@@ -8,7 +8,7 @@ const Footer = () => (
     <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
       <div className="flex-[1] flex flex-col justify-start mr-20">
         <div className="flex items-center">
-        <img src={logo} alt="hoobank" className=" ml-3 md:w-[150px] w-[90px] object-contain" />
+        <img src={logo} alt="hoobank" className=" ml-3 md:w-[250px] w-[150px] object-contain" />
         </div>
         <p className={`${styles.paragraph} mt-4 max-w-[312px] text-white`}>
         Astel strives to design and deliver the right solution to your company.

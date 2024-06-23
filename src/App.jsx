@@ -2,8 +2,7 @@ import styles from "./style";
 import './index.css';
 import Testi from "./components/Testi";
 import FeedbackCard from "./components/FeedbackCard";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Billing from "./components/Billing";
@@ -13,7 +12,6 @@ import CardDeal from "./components/CardDeal";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
 import SwiperHero from "./components/Swipper";
-import wa from './assets/whatsapp (2).png'
 import PreLoader from "./components/loading/PreLoader";
 import { useDispatch, useSelector } from "react-redux";
 import { pageBreak } from "./redux/action/awardsAction";
@@ -60,11 +58,6 @@ const App = () => {
           <Form />
           <Footer />
         </div>
-      </div>
-
-      {/* kontak */}
-      <div className="whatsapp">
-        <img src={wa} alt="" />
       </div>
       </div>
     </div>
