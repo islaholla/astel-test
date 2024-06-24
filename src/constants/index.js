@@ -5,7 +5,7 @@ import linkedin from '../assets/linkedin.svg'
 export const navLinks = [
   {
     id: "home",
-    title: "Beranda",
+    title: "Home",
   },
   {
     id: "about",
@@ -13,11 +13,11 @@ export const navLinks = [
   },
   {
     id: "Produk",
-    title: "Produk",
+    title: "Product",
   },
   {
     id: "kontak",
-    title: "Kontak",
+    title: "Contact Us",
   },
 ];
 
@@ -52,33 +52,7 @@ export const footerLinks = [
         link: "https://api.whatsapp.com/send?phone=6285290003973&text=Hi%20Mastersystem..%20Saya%20ingin%20tahu%20informasi%20mengenai%20produk%20IBM%20Mastersystem.%20Tolong%20respon%20chat%20saya%20ya..&source=&data=",
       }
     ],
-  },
-  {
-    
-    title: "",
-    links: [
-      {
-        id: "nav-1",
-        name: "Beranda",
-        link: "#home",
-      },
-      {
-        id: "nav-2",
-        name: "Intro",
-        link: "about",
-      },
-      {
-        id: "nav-3",
-        name: "Produk ",
-        link: "product",
-      },
-      {
-        id: "nav-4",
-        name: "Kontak",
-        link: "kontak",
-      }
-    ],
-  },
+  }
 ];
 
 export const socialMedia = [

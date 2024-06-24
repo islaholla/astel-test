@@ -8,10 +8,11 @@ import arrowUp from "../assets/arrow-white.svg";
 import {   motion } from "framer-motion"
 import emailjs from '@emailjs/browser';
 import { useRef } from "react";
+import Swal from 'sweetalert2'
 
 const SwiperHero = ({ slide }) => {
   const form = useRef();
-
+ 
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
@@ -21,6 +22,11 @@ const SwiperHero = ({ slide }) => {
       .then(
         () => {
           console.log('SUCCESS!');
+          Swal.fire({
+            icon: 'success',
+            title: 'Email Sent!',
+            text: 'Your message has been sent successfully.',
+          });
         },
         (error) => {
           console.log('FAILED...', error);

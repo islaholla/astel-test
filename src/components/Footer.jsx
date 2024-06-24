@@ -8,9 +8,9 @@ const Footer = () => (
     <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
       <div className="flex-[1] flex flex-col justify-start mr-20">
         <div className="flex items-center">
-        <img src={logo} alt="hoobank" className=" ml-3 md:w-[250px] w-[150px] object-contain" />
+        <img src={logo} alt="astel logo" className="md:w-[300px] w-[150px] object-contain" />
         </div>
-        <p className={`${styles.paragraph} mt-4 max-w-[312px] text-white`}>
+        <p className={`${styles.paragraph} text-[14px] xl:text-[14px] mt-4 max-w-[312px] text-white`}>
         Astel strives to design and deliver the right solution to your company.
         </p>
       </div>
@@ -21,18 +21,7 @@ const Footer = () => (
             <h4 className="font-poppins font-medium text-[18px] leading-[27px]">
               {footerlink.title}
             </h4>
-            <ul className="list-none mt-4">
-              {footerlink.links.map((link, index) => (
-                <li
-                  key={link.id}
-                  className={`font-poppins font-normal text-[16px] leading-[24px]  hover:text-secondary cursor-pointer ${
-                    index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
-                  }`}
-                >
-                 <a target= {link.target} href= {link.link}> {link.name}</a>
-                </li>
-              ))}
-            </ul>
+            <h3 className="mt-4">Jl. Pintu Air Raya No. 2F Jakarta 10710, Indonesia (+62213867575 )</h3>
           </div>
         ))}
       </div>

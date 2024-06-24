@@ -28,7 +28,7 @@ const Navbar = () => {
       <a
         className="text-white"
         target="_blank"
-        href="https://www.ibm.com/id-id"
+        href="#"
       >
         <img src={logo} alt="hoobank" class="md:w-[170px] w-[120px]" />
       </a>
