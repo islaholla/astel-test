@@ -13,12 +13,38 @@ import Form from "./components/Form";
 import SwiperHero from "./components/Swipper";
 import { useDispatch, useSelector } from "react-redux";
 import { pageBreak } from "./redux/action/awardsAction";
+import PreLoader from "./components/loading/PreLoader";
 
 const App = () => {
   const dispatch = useDispatch();
   const {getPageBreak } = useSelector(
     (state) => state.AwardsReducer
   );
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+      // Check localStorage for the first load indicator
+      const isFirstLoad = localStorage.getItem('isFirstLoad');
+  
+      if (isFirstLoad === null) {
+          // First time loading the app, show preloading
+          setIsLoading(true);
+          // Set isFirstLoad to false in localStorage
+          localStorage.setItem('isFirstLoad', 'false');
+      } else {
+          // Not the first time loading, no need to show preloading immediately
+          setIsLoading(false);
+  
+          // Set a timeout to hide loading after 5 seconds
+          const timer = setTimeout(() => {
+              setIsLoading(false);
+          }, 5000); // 5000 milliseconds = 5 seconds
+  
+          return () => clearTimeout(timer); // Clear timeout if component unmounts or on dependency change
+      }
+  }, []);
+  
+
   useEffect(() => {
     dispatch(pageBreak());
   }, [dispatch]);

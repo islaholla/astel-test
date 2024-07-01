@@ -8,7 +8,7 @@ export const navLinks = [
     title: "Home",
   },
   {
-    id: "/#about",
+    id: "/about",
     title: "Overview",
   },
   {
@@ -16,7 +16,7 @@ export const navLinks = [
     title: "Product",
   },
   {
-    id: "#kontak",
+    id: "/contact",
     title: "Contact Us",
   },
 ];

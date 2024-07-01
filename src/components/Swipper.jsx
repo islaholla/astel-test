@@ -6,11 +6,39 @@ import "@splidejs/react-splide/css/core";
 import arrowUp from "../assets/arrow-white.svg";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Swal from "sweetalert2";
 
-const SwiperHero = ({ slide }) => {
+const SwiperHero = () => {
   const form = useRef();
+  const [activeSlide, setActiveSlide] = useState(0); // State untuk melacak slide aktif
+
+  const slideData = [
+    {
+      id: 1,
+      title: "Start your Forgettable Digital journey with us",
+      description: "The best digital for your business begins now",
+      showForm: true, // Menampilkan form hanya pada slide pertama
+    },
+    {
+      id: 2,
+      title: "Together We Develop The Future",
+      description: "Pioneer and innovator in the Information Technology business",
+      showForm: false, // Tidak menampilkan form pada slide ini
+    },
+    {
+      id: 3,
+      title: "Astel offers decades of experience",
+      description: "Help your organization to stay on top of the market trends and strengthening",
+      showForm: false, // Tidak menampilkan form pada slide ini
+    },
+    {
+      id: 4,
+      title: "Technology and Telecommunication solutions",
+      description: "We provide a complete range of technology and telecommunication solutions",
+      showForm: false, // Tidak menampilkan form pada slide ini
+    },
+  ];
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -54,143 +82,95 @@ const SwiperHero = ({ slide }) => {
         aria-label="My Favorite Images"
         options={{
           rewind: true,
-          start: 3,
-          autoplay: true,
+          start: 0,
+          autoplay: false,
           speed: 800,
           direction: "ttb",
-          height: "80vh",
+          height: "100vh",
           interval: 2600,
           type: "loop",
         }}
+        onMoved={(splide, newIndex) => setActiveSlide(newIndex)} // Callback untuk melacak slide aktif
       >
-        <SplideSlide>
-          <div className="hero-1 ">
-            <motion.div
-              className="teks"
-              variants={textVatian}
-              initial="initial"
-              animate="animate"
-            >
-              <motion.h1 className="font-judul" variants={textVatian}>
-                Start your Forgettable Digital journey with us
-              </motion.h1>
-              <p>The best digital for your business begins now</p>
-            </motion.div>
-            <form
-              ref={form}
-              onSubmit={sendEmail}
-              className="contact-hero bg-white w-[80%] 2xl:w-[70%] h-[353px] xl:h-[123px] sm:h-[103px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px]"
-            >
-              <div className="input">
-                <label htmlFor="name">Name</label>
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter your name ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label htmlFor="email">Email</label>
-                <div>
-                  <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    placeholder="Enter your email ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label htmlFor="phone">Phone</label>
-                <div>
-                  <input
-                    type="number"
-                    name="phone"
-                    id="phone"
-                    placeholder="Enter your phone ..."
-                  />
-                </div>
-              </div>
-              <div className="input">
-                <label htmlFor="name">Company</label>
-                <div>
-                  <input
-                    type="text"
-                    name="campany"
-                    id="campany"
-                    placeholder="Enter your company ..."
-                  />
-                </div>
-              </div>
-              <div className="bg-[#FF7757] text-white h-[100%] rounded-r-[20px] flex items-center gap-[2rem] px-[1.2rem]">
-                <button className="rounded-r-[20px] font-judul text-[21px] 2xl:text-[28px] lg:text-[21px]  text-start w-[60%] leading-8">
-                  Connect Us
-                </button>
-                <img
-                  src={arrowUp}
-                  alt="arrow-up"
-                  className="w-[23px] h-[23px] object-contain"
-                />
-              </div>
-            </form>
-          </div>
-        </SplideSlide>
-        <SplideSlide>
-          <div className="hero-1">
-            <motion.div
-              className="teks"
-              variants={textVatian}
-              initial="initial"
-              animate="animate"
-            >
-              <motion.h1 className="font-judul" variants={textVatian}>
-                Together We Develop The Future
-              </motion.h1>
-              <p>
-                Pioneer and innovator in the Information Technology business
-              </p>
-            </motion.div>
-          </div>
-        </SplideSlide>
-        <SplideSlide>
-          <div className="hero-1 ">
-            <motion.div
-              className="teks"
-              variants={textVatian}
-              initial="initial"
-              animate="animate"
-            >
-              <motion.h1 className="font-judul" variants={textVatian}>
-                Astel offers decades of experience
-              </motion.h1>
-              <p>
-                Help your organization to stay on top of the market trends and
-                strengthening
-              </p>
-            </motion.div>
-          </div>
-        </SplideSlide>
-        <SplideSlide>
-          <div className="hero-1  ">
-            <motion.div
-              className="teks"
-              variants={textVatian}
-              initial="initial"
-              animate="animate"
-            >
-              <motion.h1 className="font-judul" variants={textVatian}>
-                Technology and Telecommunication solutions
-              </motion.h1>
-              <p>
-                We provide a complete range of technology and telecommunication
-                solutions
-              </p>
-            </motion.div>
-          </div>
-        </SplideSlide>
+        {slideData.map((item, index) => (
+          <SplideSlide key={item.id}>
+            <div className="hero-1 ">
+              <motion.div
+                className="teks"
+                variants={textVatian}
+                initial="initial"
+                animate="animate"
+              >
+                <motion.h1 className="font-judul" variants={textVatian}>
+                  {item.title}
+                </motion.h1>
+                <p>{item.description}</p>
+              </motion.div>
+              {item.showForm && activeSlide === index && ( // Menampilkan form hanya jika showForm true dan slide aktif adalah slide pertama
+                <form
+                  ref={form}
+                  onSubmit={sendEmail}
+                  className="contact-hero bg-white w-[80%] 2xl:w-[70%] h-[353px] xl:h-[123px] sm:h-[103px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px]"
+                >
+                  <div className="input">
+                    <label htmlFor="name">Name</label>
+                    <div>
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Enter your name ..."
+                      />
+                    </div>
+                  </div>
+                  <div className="input">
+                    <label htmlFor="email">Email</label>
+                    <div>
+                      <input
+                        type="text"
+                        name="email"
+                        id="email"
+                        placeholder="Enter your email ..."
+                      />
+                    </div>
+                  </div>
+                  <div className="input">
+                    <label htmlFor="phone">Phone</label>
+                    <div>
+                      <input
+                        type="number"
+                        name="phone"
+                        id="phone"
+                        placeholder="Enter your phone ..."
+                      />
+                    </div>
+                  </div>
+                  <div className="input">
+                    <label htmlFor="name">Company</label>
+                    <div>
+                      <input
+                        type="text"
+                        name="company"
+                        id="company"
+                        placeholder="Enter your company ..."
+                      />
+                    </div>
+                  </div>
+                  <div className="bg-[#FF7757] text-white h-[100%] rounded-r-[20px] flex items-center gap-[2rem] px-[1.2rem]">
+                    <button className="rounded-r-[20px] font-judul text-[21px] 2xl:text-[28px] lg:text-[21px]  text-start w-[60%] leading-8">
+                      Connect Us
+                    </button>
+                    <img
+                      src={arrowUp}
+                      alt="arrow-up"
+                      className="w-[23px] h-[23px] object-contain"
+                    />
+                  </div>
+                </form>
+              )}
+            </div>
+          </SplideSlide>
+        ))}
       </Splide>
     </div>
   );

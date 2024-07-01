@@ -300,14 +300,12 @@
 .swipperHero .splide__pagination--ttb .splide__pagination__page {
   height: 16px !important;
   width: 16px !important;
-  border-radius: 21px;
+  border-radius: 21px;  
 }
-.swipperHero div#splide01-track {
+.swipperHero .splide-track   {
   height: calc(0px + 100vh) !important;
 }
-.swipperHero div#splide02-track {
-  height: calc(0px + 100vh) !important;
-}
+
 .swipperHero .splide__pagination__page.is-active {
   background-color: red !important;
 }
@@ -328,7 +326,7 @@
   text-align: end;
   padding-right: 5rem;
 }
-.swipperHero li#splide01-slide02  .hero-1 .teks , .swipperHero li#splide02-slide02  .hero-1 .teks{
+ul.splide__list > li:nth-child(4) .hero-1 .teks {
   width: 70%;
   margin-top: 0;
   justify-self: center;
@@ -336,7 +334,7 @@
   padding-right: 0;
   text-align: center;
 }
-.swipperHero li#splide01-slide03  .hero-1 .teks, .swipperHero li#splide02-slide03  .hero-1 .teks  {
+ul.splide__list > li:nth-child(5) .hero-1 .teks {
   width: 70%;
   margin-top: 0;
   justify-self: start;
@@ -344,7 +342,7 @@
   align-self: center;
   text-align: center;
 }
-.swipperHero li#splide01-slide04  .hero-1 .teks , .swipperHero li#splide02-slide04  .hero-1 .teks{
+ul.splide__list > li:nth-child(6)  .hero-1 .teks {
   width: 60%;
   margin-top: 10rem;
   justify-self: end;
@@ -365,25 +363,25 @@
 .swipperHero .splide__slide {
   height: 100%;
 }
-.swipperHero #splide01-slide01 ,.swipperHero  #splide02-slide01{
+.splide__track ul > li:nth-child(3) {
   background: url(assets/exp-1.png);
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.swipperHero li#splide01-slide02 ,.swipperHero  #splide02-slide02 {
+.splide__track ul > li:nth-child(4)  {
   background: url(assets/back.png);
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.swipperHero li#splide01-slide03 ,.swipperHero  #splide02-slide03{
+.splide__track ul > li:nth-child(5) {
   background: url(assets/exp-5.jpg);
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.swipperHero li#splide01-slide04 ,.swipperHero  #splide02-slide04{
+.splide__track ul > li:nth-child(6) {
   background: url(assets/exp-2.png);
   background-position: right;
   background-size: cover;
@@ -416,7 +414,7 @@
   border-bottom: 1px solid;
   width: 80%;
 }
-li#nav-\#kontak {
+li#nav-/contact {
   background-color: rgb(255, 119, 87);
   padding: 9px 20px;
   color: white;
