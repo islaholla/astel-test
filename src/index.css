@@ -305,6 +305,9 @@
 .swipperHero div#splide01-track {
   height: calc(0px + 100vh) !important;
 }
+.swipperHero div#splide02-track {
+  height: calc(0px + 100vh) !important;
+}
 .swipperHero .splide__pagination__page.is-active {
   background-color: red !important;
 }
@@ -325,7 +328,7 @@
   text-align: end;
   padding-right: 5rem;
 }
-.swipperHero li#splide01-slide02  .hero-1 .teks {
+.swipperHero li#splide01-slide02  .hero-1 .teks , .swipperHero li#splide02-slide02  .hero-1 .teks{
   width: 70%;
   margin-top: 0;
   justify-self: center;
@@ -333,7 +336,7 @@
   padding-right: 0;
   text-align: center;
 }
-.swipperHero li#splide01-slide03  .hero-1 .teks {
+.swipperHero li#splide01-slide03  .hero-1 .teks, .swipperHero li#splide02-slide03  .hero-1 .teks  {
   width: 70%;
   margin-top: 0;
   justify-self: start;
@@ -341,7 +344,7 @@
   align-self: center;
   text-align: center;
 }
-.swipperHero li#splide01-slide04  .hero-1 .teks {
+.swipperHero li#splide01-slide04  .hero-1 .teks , .swipperHero li#splide02-slide04  .hero-1 .teks{
   width: 60%;
   margin-top: 10rem;
   justify-self: end;
@@ -362,25 +365,25 @@
 .swipperHero .splide__slide {
   height: 100%;
 }
-.swipperHero li#splide01-slide01 {
+.swipperHero #splide01-slide01 ,.swipperHero  #splide02-slide01{
   background: url(assets/exp-1.png);
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.swipperHero li#splide01-slide02 {
+.swipperHero li#splide01-slide02 ,.swipperHero  #splide02-slide02 {
   background: url(assets/back.png);
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.swipperHero li#splide01-slide03 {
+.swipperHero li#splide01-slide03 ,.swipperHero  #splide02-slide03{
   background: url(assets/exp-5.jpg);
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.swipperHero li#splide01-slide04 {
+.swipperHero li#splide01-slide04 ,.swipperHero  #splide02-slide04{
   background: url(assets/exp-2.png);
   background-position: right;
   background-size: cover;

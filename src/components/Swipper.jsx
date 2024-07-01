@@ -2,61 +2,61 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import "@splidejs/react-splide/css/skyblue";
 import "@splidejs/react-splide/css/sea-green";
-// or only core styles
 import "@splidejs/react-splide/css/core";
 import arrowUp from "../assets/arrow-white.svg";
-import {   motion } from "framer-motion"
-import emailjs from '@emailjs/browser';
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import { useRef } from "react";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 const SwiperHero = ({ slide }) => {
   const form = useRef();
- 
+
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm('service_u7p333a', 'template_87qzy6n',form.current,{
-        publicKey: 'mPsQ83Cw6-bBVZYSt',
+      .sendForm("service_u7p333a", "template_87qzy6n", form.current, {
+        publicKey: "mPsQ83Cw6-bBVZYSt",
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          console.log("SUCCESS!");
           Swal.fire({
-            icon: 'success',
-            title: 'Email Sent!',
-            text: 'Your message has been sent successfully.',
+            icon: "success",
+            title: "Email Sent!",
+            text: "Your message has been sent successfully.",
           });
         },
         (error) => {
-          console.log('FAILED...', error);
-        },
+          console.log("FAILED...", error);
+        }
       );
   };
 
   const textVatian = {
-    initial :{
-      x :50,
-      opacity :0
+    initial: {
+      x: 50,
+      opacity: 0,
     },
-    animate : {
-      x : 0,
-      opacity : 1,
-      transition :{
-        duration : 1,
-        straggerChildren :0.1 
-      }
-    }
-  }
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
   return (
     <div className="bg-[#000]">
       <Splide
         aria-label="My Favorite Images"
         options={{
           rewind: true,
-          start  : 3,
+          start: 3,
           autoplay: true,
-          speed:800,
+          speed: 800,
           direction: "ttb",
           height: "80vh",
           interval: 2600,
@@ -64,15 +64,24 @@ const SwiperHero = ({ slide }) => {
         }}
       >
         <SplideSlide>
-          <div className="hero-1 " >
-            <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
-              <motion.h1 className="font-judul" variants={textVatian} > 
+          <div className="hero-1 ">
+            <motion.div
+              className="teks"
+              variants={textVatian}
+              initial="initial"
+              animate="animate"
+            >
+              <motion.h1 className="font-judul" variants={textVatian}>
                 Start your Forgettable Digital journey with us
               </motion.h1>
-              <p>The best digital for your bisniss begins now</p>
+              <p>The best digital for your business begins now</p>
             </motion.div>
-            <form ref={form} onSubmit={sendEmail} className="contact-hero bg-white w-[80%]   2xl:w-[70%] h-[353px] xl:h-[123px]  sm:h-[103px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px] ">
-              <div  className="input">
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="contact-hero bg-white w-[80%] 2xl:w-[70%] h-[353px] xl:h-[123px] sm:h-[103px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px]"
+            >
+              <div className="input">
                 <label htmlFor="name">Name</label>
                 <div>
                   <input
@@ -112,7 +121,7 @@ const SwiperHero = ({ slide }) => {
                     type="text"
                     name="campany"
                     id="campany"
-                    placeholder="Enter your campany ..."
+                    placeholder="Enter your company ..."
                   />
                 </div>
               </div>
@@ -127,40 +136,59 @@ const SwiperHero = ({ slide }) => {
                 />
               </div>
             </form>
-
           </div>
         </SplideSlide>
         <SplideSlide>
-        <div className="hero-1" >
-            <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
-              <motion.h1 className="font-judul" variants={textVatian} > 
-               Together We Develop The Future
+          <div className="hero-1">
+            <motion.div
+              className="teks"
+              variants={textVatian}
+              initial="initial"
+              animate="animate"
+            >
+              <motion.h1 className="font-judul" variants={textVatian}>
+                Together We Develop The Future
               </motion.h1>
-              <p>pioneer and innovator in the Information Technology business</p>
+              <p>
+                Pioneer and innovator in the Information Technology business
+              </p>
             </motion.div>
-            
           </div>
         </SplideSlide>
         <SplideSlide>
-        <div className="hero-1 " >
-            <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
-              <motion.h1 className="font-judul" variants={textVatian} > 
-              Astel offers decades of experience 
+          <div className="hero-1 ">
+            <motion.div
+              className="teks"
+              variants={textVatian}
+              initial="initial"
+              animate="animate"
+            >
+              <motion.h1 className="font-judul" variants={textVatian}>
+                Astel offers decades of experience
               </motion.h1>
-              <p>help your organization to stay on top of the market trends and strengthening </p>
+              <p>
+                Help your organization to stay on top of the market trends and
+                strengthening
+              </p>
             </motion.div>
-
           </div>
         </SplideSlide>
         <SplideSlide>
-        <div className="hero-1  " >
-            <motion.div className="teks" variants={textVatian} initial = "initial" animate="animate">
-              <motion.h1 className="font-judul" variants={textVatian} > 
-              Technology and Telecommunication solutions
-                            </motion.h1>
-              <p>We provide a complete range of technology and telecommunication solutions</p>
+          <div className="hero-1  ">
+            <motion.div
+              className="teks"
+              variants={textVatian}
+              initial="initial"
+              animate="animate"
+            >
+              <motion.h1 className="font-judul" variants={textVatian}>
+                Technology and Telecommunication solutions
+              </motion.h1>
+              <p>
+                We provide a complete range of technology and telecommunication
+                solutions
+              </p>
             </motion.div>
-          
           </div>
         </SplideSlide>
       </Splide>
