@@ -8,7 +8,7 @@ import { aboutPage } from "../redux/action/awardsAction";
 
 const About = () => {
   const dispatch = useDispatch();
-  const { getPageAbout, getPageAboutLoading } = useSelector(
+  const { getPageAbout } = useSelector(
     (state) => state.AwardsReducer
   );
    const variants = {

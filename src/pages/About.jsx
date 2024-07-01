@@ -7,7 +7,9 @@ const AboutPage = () => {
     <div >
       <Navbar />
       <div className="about pt-[2rem]">
+        
         <About/>
+       
       </div>
     </div>
   )
