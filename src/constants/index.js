@@ -4,19 +4,19 @@ import facebook from '../assets/facebook.svg'
 import linkedin from '../assets/linkedin.svg'
 export const navLinks = [
   {
-    id: "home",
+    id: "/",
     title: "Home",
   },
   {
-    id: "about",
+    id: "#about",
     title: "Overview",
   },
   {
-    id: "Produk",
+    id: "/product",
     title: "Product",
   },
   {
-    id: "kontak",
+    id: "#kontak",
     title: "Contact Us",
   },
 ];

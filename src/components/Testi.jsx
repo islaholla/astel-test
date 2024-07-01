@@ -34,7 +34,7 @@ const Testi = () => {
     className={`${styles.flexCenter} ${styles.marginY} sm:flex-row flex-col  ${styles.paddingX}` }
   >
     <motion.div className="flex-1 flex flex-col" variants={textVatian} initial = "initial" whileInView="animate">
-      <h2 className={styles.heading2}> Customer Experiences</h2>
+      <h2 className={styles.heading2}> Our Customers</h2>
       <div className="w-[290px] line"></div>
       <p className={`${styles.paragraph} sub-title`}>
       {getPageCust[0] ? getPageCust[0].title.rendered : 'loading'}

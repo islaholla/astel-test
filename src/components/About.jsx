@@ -55,14 +55,7 @@ const About = () => {
             <p className="leading-[28px] xl:leading-[32px] 2xl:leading-[38px]">
              {getPageAbout.content ? parse( getPageAbout.content.rendered):''}
             </p>
-            <a target="_blank" className="flex items-center gap-[12px]">
-              <button className="` text-[#FF7757] `"> Read More</button>
-              <img
-                src={arrowUp}
-                alt="arrow-up"
-                className="w-[21px] h-[21px] object-contain"
-              />
-            </a>
+            
           </div>
         </motion.div>
       </motion.div>

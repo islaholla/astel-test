@@ -413,9 +413,10 @@
   border-bottom: 1px solid;
   width: 80%;
 }
-#nav-kontak {
+li#nav-\#kontak {
   background-color: rgb(255, 119, 87);
   padding: 9px 20px;
+  color: white;
   border-radius: 8px;
 }
 
@@ -533,7 +534,22 @@ section#review {
   width: 80%;
 }
 
+/* end section */
+#endSection{
+  background: url('./assets/end.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-top: 5rem;
+  height: 400px;
 
+}
+#endSection h1{
+  color: white;
+  line-height: 1;
+  font-size: 34px;
+  text-align: center;
+}
 /* kontak */
 .whatsapp{
   position: fixed;

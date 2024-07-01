@@ -44,7 +44,6 @@ const SwiperHero = ({ slide }) => {
       opacity : 1,
       transition :{
         duration : 1,
-        delay : 3.5,
         straggerChildren :0.1 
       }
     }

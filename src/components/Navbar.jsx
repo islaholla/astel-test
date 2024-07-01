@@ -4,45 +4,32 @@ import  close from "../assets/close.svg";
 import logo from "../assets/Logo Astel.png";
 import menu from '../assets/menu.svg'
 import { navLinks } from "../constants";
-import {  motion } from "framer-motion"
+import styles from "../style";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (custom) => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
-  const variants = {
-    initial :{
-      opacity :0
-    },
-    animate : {
-      y : 0,
-      opacity : 1,
-      transition :{
-        duration : 1,
-        delay : 3.5,
-        straggerChildren :0.1 
-      }
-    }
-  }
+  
   return (
-    <motion.nav className="w-full flex py-6 justify-between items-center	"  variants={variants} initial = "initial" animate="animate"  >
-      <a
-        className="text-white"
-        target="_blank"
-        href="#"
-      >
-        <img src={logo} alt="hoobank" class="md:w-[170px] w-[120px]" />
-      </a>
+    <div  className={`${styles.paddingX} ${styles.flexCenter} ${styles.boxWidth} navbar absolute z-10`}>
+      <div className={`${styles.boxWidth} `}>
+      <nav className="w-full flex py-6 justify-between items-center	"  >
+      <Link to="/" className="text-white">
+          <img src={logo} alt="astel" class="md:w-[170px] w-[120px]" />
+        </Link>
+  
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
             id={`nav-${nav.id}`}
-            className={`cursor-pointer text-[16px] text-white  ${
-              active === nav.title ? "text-white" : "text-white"
+            className={`cursor-pointer lg:text-[16px] xl:text-[14px]  ${custom.color ? custom.color : 'text-[#000]'} ${
+              active === nav.title ? "text-[#000]" : "text-[#000]"
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <Link to={`${nav.id}`}>{nav.title}</Link>
           </li>
         ))}
       </ul>
@@ -74,7 +61,9 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-    </motion.nav>
+    </nav>
+      </div>
+    </div>
   );
 };
 
