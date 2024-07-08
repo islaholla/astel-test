@@ -1,4 +1,4 @@
-import { GET_LIST_AWARDS, GET_PAGE_CUST,GET_PAGE_ABOUT,GET_PAGE_PARTNER_LIST,GET_PAGE_PARTNER ,GET_PAGE_BREAK, GET_PAGE_BISNIS} from "../action/awardsAction";
+import { GET_LIST_AWARDS, GET_PAGE_CUST,GET_PAGE_ABOUT,GET_PAGE_PARTNER_LIST,GET_PAGE_PARTNER ,GET_PAGE_BREAK, GET_PAGE_BISNIS, GET_LIST_CUST} from "../action/awardsAction";
 
 const innitialState ={
     getListAwards : false,
@@ -22,6 +22,9 @@ const innitialState ={
     getPageBisnis : false,
     getPageBisnisLoading : false,
     getPageBisnisError : false,
+    getListCust : false,
+    getListCustLoading : false,
+    getListCustError : false,
    
 }
 
@@ -75,6 +78,13 @@ const awards = (state = innitialState, action) =>{
                 getPageCust : action.payload.data,
                 getPageCustLoading : action.payload.loading,
                 getPageCustError : action.payload.errorMassage
+            }
+        case GET_LIST_CUST :
+            return {
+                ...state,
+                getListCust : action.payload.data,
+                getListCustLoading : action.payload.loading,
+                getListCustError : action.payload.errorMassage
             }
         default:
             return state;

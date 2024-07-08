@@ -1,5 +1,4 @@
 import styles from "../style";
-import image from "../assets/lintas.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { custPage } from "../redux/action/awardsAction";

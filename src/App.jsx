@@ -14,6 +14,7 @@ import SwiperHero from "./components/Swipper";
 import { useDispatch, useSelector } from "react-redux";
 import { pageBreak } from "./redux/action/awardsAction";
 import PreLoader from "./components/loading/PreLoader";
+import Customers from "./components/Customer";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -70,6 +71,7 @@ const App = () => {
           <CardDeal />
           <CTA paragrap= {getPageBreak[1] ? getPageBreak[1].title.rendered :''} />
           <Testi />
+          <Customers/>
           <FeedbackCard />
           <Form />
         </div>

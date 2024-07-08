@@ -1,7 +1,6 @@
 import styles from "../style";
 import parse from "html-react-parser";
-import { useCallback, useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
 import {  motion } from "framer-motion"
 import { useDispatch, useSelector } from "react-redux";
 import { bisnissPage } from "../redux/action/awardsAction";
