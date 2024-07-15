@@ -39,7 +39,7 @@ const CardDeal = () => {
           Our quality of service has been accredited by the awards and
           achievements that we attained over the years.
         </p>
-        <div className="flex md:grid-cols-4 grid grid-cols-1 gap-[3.5rem] mt-[1.5rem] mx-auto lg:w-[90%] w-[80%] 2xl:w-[80%]">
+        <div className="flex xl:grid-cols-2 grid grid-cols-1 gap-[3.5rem] mt-[1.5rem] mx-auto lg:w-[100%] w-[80%] 2xl:w-[100%]">
           {getListAwards
             ? getListAwards?.map((item, index) => {
                 return (

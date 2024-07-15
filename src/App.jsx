@@ -60,7 +60,6 @@ const App = () => {
           <SwiperHero />
         </div>
       </div>
-
       <div className={` ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           {/* <Stats /> */}
