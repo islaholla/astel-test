@@ -35,17 +35,17 @@ const Business = () => {
   return (
     <section
       id="product"
-      className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} sm:flex-row flex-col sm:px-16 px-6  ${styles.paddingX}`}
+      className={`${styles.flexCenter} sm:flex-row flex-col sm:px-16 px-6 `}
     >
         <motion.div className="flex-1 flex flex-col"  variants={variants} initial = "initial" whileInView="animate">
         <motion.h2 className={`${styles.heading2} text-center`} variants={variants}>
-          Our Business & Solutions 
+          Our Solutions 
         </motion.h2>
         <div className="w-[150px] line mx-auto"></div>
         <p className={`${styles.paragraph} sub-title text-center`}>
           Check out our special offer and discounts
         </p>
-        <div className="flex md:grid-cols-3 grid grid-cols-1 gap-[2.5rem] mt-[1.5rem] mx-auto xl:w-[88%] w-[100%]">
+        <div className="flex md:grid-cols-4 grid grid-cols-2 gap-[2.5rem] mt-[1.5rem] mx-auto xl:w-[88%] w-[100%]">
           {getPageBisnis ? getPageBisnis?.map((item, index) => {
             return (
               <div className="card bg-white pt-6 " key={index}>
@@ -55,12 +55,12 @@ const Business = () => {
                     alt=""
                   />
                 </div>
-                <div className="p-6 grid px-8">
-                  <h3 className="text-[21px] lg:text-[18px] font-bold text-[#767E86]">
+                <div className="p-6 grid px-5">
+                  <h3 className="text-[21px] lg:text-[16px] font-bold text-[#767E86]">
                     {item.title.rendered}
                   </h3>
                   {/* parse(item.content.rendered) */}
-                  <p className="text-[14px] font-p">
+                  <p className="text-[13px] font-p mt-2">
                     {item.content.rendered.length  > 100 ? parse(item.content.rendered.substring(0, 100)) : parse(item.content.rendered) }
                   </p>
                   <button onClick={ () => { 

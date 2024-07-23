@@ -16,8 +16,8 @@ const SwiperHero = () => {
   const slideData = [
     {
       id: 1,
-      title: "Start your Forgettable Digital journey with us",
-      description: "The best digital for your business begins now",
+      title: "Your Partner in IT Excellent",
+      description: '',
       showForm: true, // Menampilkan form hanya pada slide pertama
     },
     {

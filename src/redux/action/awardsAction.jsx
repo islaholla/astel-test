@@ -264,7 +264,7 @@ export const listPartnerPage = () => {
     // get Api
     axios({
       method: "GET",
-      url: "https://api.astelst.com/wp-json/wp/v2/posts?per_page=17&&.embed&&categories=3",
+      url: "https://api.astelst.com/wp-json/wp/v2/posts?per_page=18&&.embed&&categories=3",
       timeout: 120000,
     })
       .then((Response) => {

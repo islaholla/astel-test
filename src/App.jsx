@@ -64,9 +64,9 @@ const App = () => {
         <div className={`${styles.boxWidth}`}>
           {/* <Stats /> */}
           <About />
+          <Business />
           <Billing />
           <CTA paragrap= {getPageBreak[0] ? getPageBreak[0].title.rendered :''} />
-          <Business />
           <CardDeal />
           <CTA paragrap= {getPageBreak[1] ? getPageBreak[1].title.rendered :''} />
           <Testi />
