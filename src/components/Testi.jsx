@@ -30,7 +30,7 @@ const Testi = () => {
     return (
       <section
     id="testi"
-    className={`${styles.flexCenter} ${styles.marginY} sm:flex-row flex-col  ${styles.paddingX}` }
+    className={`${styles.flexCenter}  sm:flex-row flex-col mt-6 ${styles.paddingX}` }
   >
     <motion.div className="flex-1 flex flex-col" variants={textVatian} initial = "initial" whileInView="animate">
       <h2 className={styles.heading2}> Our Customers</h2>
@@ -38,17 +38,7 @@ const Testi = () => {
       <p className={`${styles.paragraph} sub-title`}>
       {getPageCust[0] ? getPageCust[0].title.rendered : 'loading'}
       </p>
-      <div className="flex lg:grid-cols-2 grid grid-cols-1 mt-[1.5rem] mx-auto w-[100%]">
-        <div className=" pt-6 ">
-          <div className="image w-[300px] xl:w-[440px] md:w-[340px]" >
-            <img src={getPageCust ? getPageCust[0]._embedded['wp:featuredmedia']['0'].source_url : ''} alt="" />   </div>
-        </div>
-        <div className="  pt-6 flex items-center">
-          <p className={`${styles.paragraph}`}>
-          {getPageCust[0] ? parse(getPageCust[0].content.rendered) : 'loading'}
-          </p>
-        </div>
-      </div>
+    
     </motion.div>
        </section>
   );

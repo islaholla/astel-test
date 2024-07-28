@@ -520,19 +520,17 @@ section#review {
 .swiper-button-prev {
   left: initial !important;
   height: 42px !important;
-  top: 24px !important;
   width: 40px !important;
   color: #fff !important;
+  margin-top: 5rem !important;
   border-radius: 8px;
 }
 .swiper-button-prev {
-  right: 15rem !important;
-
+  right: 0 !important;
   background-color: #172432;
+  margin-right: 4rem;
 }
 .swiper-button-next {
-  right: 11.4rem !important;
-
   background-color: #ff7757;
 }
 /* contact */
@@ -595,4 +593,21 @@ section#review {
  figure.wp-block-image {
   margin: auto;
 width: 100px;
+}
+.customers{
+  position: relative;
+}
+
+.text-solution p{
+  height: 70%;
+  overflow: hidden;
+}
+.customers .swiper-slide{
+  width: 140px !important;
+  height: 90px;
+}
+.customers .swiper-slide img{
+  width: 100% !important;
+  height: 100%;
+  object-fit: contain;
 }

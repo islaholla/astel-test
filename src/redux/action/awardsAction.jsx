@@ -304,7 +304,7 @@ export const listCust = () => {
     // get Api
     axios({
       method: "GET",
-      url: "https://api.astelst.com/wp-json/wp/v2/posts?per_page=17&&.embed&&categories=8",
+      url: "https://api.astelst.com/wp-json/wp/v2/posts?per_page=30&&.embed&&categories=8",
       timeout: 120000,
     })
       .then((Response) => {

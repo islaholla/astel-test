@@ -35,7 +35,7 @@ const Business = () => {
   return (
     <section
       id="product"
-      className={`${styles.flexCenter} sm:flex-row flex-col sm:px-16 px-6 `}
+      className={`${styles.flexCenter} sm:flex-row flex-col sm:px-16 px-6 my-[2rem]  `}
     >
         <motion.div className="flex-1 flex flex-col"  variants={variants} initial = "initial" whileInView="animate">
         <motion.h2 className={`${styles.heading2} text-center`} variants={variants}>
@@ -60,9 +60,9 @@ const Business = () => {
                     {item.title.rendered}
                   </h3>
                   {/* parse(item.content.rendered) */}
-                  <p className="text-[13px] font-p mt-2">
+                  <div className="text-[13px] h-[90px]  text-solution bg-warning font-p mt-2">
                     {item.content.rendered.length  > 100 ? parse(item.content.rendered.substring(0, 100)) : parse(item.content.rendered) }
-                  </p>
+                  </div>
                   <button onClick={ () => { 
                     setIsOpen(true)
                     setKonten([item.title.rendered,parse(item.content.rendered)])

@@ -4,7 +4,6 @@ import Testi from "./components/Testi";
 import FeedbackCard from "./components/FeedbackCard";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
 import Billing from "./components/Billing";
 import CTA from "./components/CTA";
 import Business from "./components/Business";
@@ -13,7 +12,6 @@ import Form from "./components/Form";
 import SwiperHero from "./components/Swipper";
 import { useDispatch, useSelector } from "react-redux";
 import { pageBreak } from "./redux/action/awardsAction";
-import PreLoader from "./components/loading/PreLoader";
 import Customers from "./components/Customer";
 
 const App = () => {
@@ -63,7 +61,7 @@ const App = () => {
       <div className={` ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           {/* <Stats /> */}
-          <About />
+          {/* <About /> */}
           <Business />
           <Billing />
           <CTA paragrap= {getPageBreak[0] ? getPageBreak[0].title.rendered :''} />
