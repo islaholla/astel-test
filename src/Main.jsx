@@ -5,7 +5,7 @@ import Client from "./pages/Client";
 import { useEffect, useState } from "react";
 import PreLoader from "./components/loading/PreLoader";
 import ContactPage from "./pages/Contact";
-import AboutPage from "./pages/Solution";
+import AboutPage from "./pages/About";
 import Business from "./components/Business";
 import SolutionPage from "./pages/Solution";
 
@@ -20,6 +20,7 @@ function Main() {
                     <Routes>
                         <Route path='/' element={<App />} />
                         <Route path='/product' element={<Client />} />
+                        <Route path='/about-us' element={<AboutPage />} />
                         <Route path='/solution' element={<SolutionPage />} />
                         <Route path='/contact' element={<ContactPage />} />
                     </Routes>

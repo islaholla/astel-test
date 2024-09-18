@@ -39,7 +39,9 @@ const Business = () => {
         </motion.h2>
         <div className="w-[150px] line mx-auto" />
         <p className={`${styles.paragraph} sub-title text-center`}>
-          Check out our special offer and discounts
+        We specialize in advanced IT solutions, system integration and digital transformation. 
+Our solutions include:
+
         </p>
         <div className="grid lg:grid-cols-4 grid-cols-2 gap-6 mt-6 mx-auto xl:w-[88%] w-full">
           {getPageBisnis ? getPageBisnis.map((item, index) => (

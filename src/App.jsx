@@ -5,6 +5,7 @@ import FeedbackCard from "./components/FeedbackCard";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Billing from "./components/Billing";
+import About from "./components/About";
 import CTA from "./components/CTA";
 import Business from "./components/Business";
 import CardDeal from "./components/CardDeal";
@@ -62,7 +63,7 @@ const App = () => {
       <div className={` ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           {/* <Stats /> */}
-          {/* <About /> */}
+          <About />
           <GlimpseOfAst/>
           <Business />
           <Billing />
