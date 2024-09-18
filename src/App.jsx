@@ -13,6 +13,7 @@ import SwiperHero from "./components/Swipper";
 import { useDispatch, useSelector } from "react-redux";
 import { pageBreak } from "./redux/action/awardsAction";
 import Customers from "./components/Customer";
+import GlimpseOfAst from "./components/GlimpseOfAst";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -62,6 +63,7 @@ const App = () => {
         <div className={`${styles.boxWidth}`}>
           {/* <Stats /> */}
           {/* <About /> */}
+          <GlimpseOfAst/>
           <Business />
           <Billing />
           <CTA paragrap= {getPageBreak[0] ? getPageBreak[0].title.rendered :''} />

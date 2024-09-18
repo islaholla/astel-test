@@ -89,6 +89,8 @@ const SwiperHero = () => {
           height: "100vh",
           interval: 2600,
           type: "loop",
+          drag: window.innerWidth > 768, // Mengizinkan drag hanya di layar lebih besar dari 768px
+
         }}
         onMoved={(splide, newIndex) => setActiveSlide(newIndex)} // Callback untuk melacak slide aktif
       >
@@ -110,7 +112,7 @@ const SwiperHero = () => {
                 <form
                   ref={form}
                   onSubmit={sendEmail}
-                  className="contact-hero bg-white w-[80%] 2xl:w-[70%] h-[353px] xl:h-[123px] sm:h-[103px] mt-[6rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px]"
+                  className="contact-hero bg-white w-[80%] 2xl:w-[70%] h-[353px] xl:h-[123px] sm:h-[103px] mt-[4rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px]"
                 >
                   <div className="input">
                     <label htmlFor="name">Name</label>
