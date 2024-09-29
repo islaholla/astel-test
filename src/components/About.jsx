@@ -15,7 +15,6 @@ const About = () => {
   }, [dispatch]);
 
   const rawContent = getPageAbout.content ? getPageAbout.content.rendered : '';
-  const content = parse(rawContent);
 
   // Count words in rawContent
   const wordsArray = typeof rawContent === 'string' ? rawContent.trim().split(/\s+/) : [];
@@ -28,22 +27,27 @@ const About = () => {
   return (
     <section
       id="about"
-      className={`${styles.flexCenter} ${styles.marginY} sm:flex-row flex-col ${styles.paddingX}`}
+      className={`${styles.flexCenter} mt-16 sm:flex-row flex-col ${styles.paddingX}`}
     >
       <motion.div className="flex-1 flex flex-col w-[100%]">
-        <motion.h2 className={styles.heading2}>About Us</motion.h2>
-        <motion.div className="w-[150px] line"></motion.div>
-        <motion.p className={`${styles.paragraph} sub-title`}>
+        <motion.h2 className={`${styles.heading2} text-center`}>About Us</motion.h2>
+        <motion.div className="w-[150px] line mx-auto"></motion.div>
+        <motion.p className={`${styles.paragraph} sub-title text-center`}>
           From Tradition to Technology: Delivering Cutting-Edge Solutions for Over 40 Years
         </motion.p>
         <motion.div className="flex md:flex-row flex-col gap-[2.5rem] md:gap-[4.5rem] mt-[1.5rem]">
           <div className="2xl:w-[530px] lg:w-[430px] lg:h-[430px] xl:w-[460px] xl:h-[480px] xs:w-[209px] s:w-[209px] 2xl:h-[560px]">
             {getPageAbout._embedded && (
-              <img
-                src={getPageAbout._embedded['wp:featuredmedia'][0].source_url}
-                alt="About Image"
-                className="w-[100%] h-[100%] object-cover"
-              />
+               <lottie-player 
+               src="https://lottie.host/85bae934-1c08-45d3-af0c-b96bc890ea74/CepICbHyCm.json"  
+               background="#fff" 
+               speed="1" 
+               style={{ width: '550px', height: '550px' }} // Ukuran diperbesar
+               loop 
+               autoplay 
+               direction="1" 
+               mode="normal"
+             ></lottie-player>
             )}
           </div>
           <div className={`${styles.paragraph} konten text-start sm:text-justify sm:w-[50%] w-[100%]`}>
@@ -54,7 +58,7 @@ const About = () => {
               {parse(displayedContent)} 
             </p>
             {isLongContent && (
-              <Link to="/about-us" className="text-blue-500 mt-2 inline-block">
+              <Link to="/about" className="text-blue-500 mt-2 inline-block">
                 Read More
               </Link>
             )}

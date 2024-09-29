@@ -2,12 +2,11 @@ import styles from "../style";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { custPage } from "../redux/action/awardsAction";
-import parse from 'html-react-parser'
 import {  motion } from "framer-motion"
 
 const Testi = () => {
   const dispatch = useDispatch();
-  const { getPageCust, getPageCustLoading } = useSelector(
+  const { getPageCust } = useSelector(
     (state) => state.AwardsReducer
   );
   const textVatian = {

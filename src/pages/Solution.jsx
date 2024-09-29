@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { aboutPage } from "../redux/action/awardsAction";
 import Navbar from "../components/Navbar";
 import Business from "../components/Business";

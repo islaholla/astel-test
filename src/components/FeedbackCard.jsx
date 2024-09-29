@@ -1,13 +1,9 @@
 import styles from "../style";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
 // Import Swiper styles
-import image2 from "../assets/avatar.png";
 import { motion } from "framer-motion"
 
 import "swiper/css";
 import "swiper/css/navigation";
-import ratting from '../assets/Rating.png'
 
 const FeedbackCard = () => {
   const variants = {

@@ -40,7 +40,7 @@ const Customers = () => {
                             {item.content ? (
                                 <>
                                     <SwiperSlide>                      
-                                     <img src={item._embedded['wp:featuredmedia'][0].source_url} alt="Image" />
+                                     <image src={item._embedded['wp:featuredmedia'][0].source_url} alt="Image" />
                                     </SwiperSlide>
                                 </>) : ''}
                         </div>

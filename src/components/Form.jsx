@@ -12,7 +12,7 @@ const Form = () => {
         className={`${styles.flexCenter} ${styles.marginY} sm:flex-row flex-col gap-[2rem] ${styles.paddingX}`}
       >
         <div className={` wrap-iframe ${layout.sectionImg}`}>
-          <iframe className="w-[100%] h-[100%]" src={map}></iframe>
+          <iframe className="w-[100%] h-[100%]" src={map} title="Contact Astel" > </iframe>
         </div>
         <div className={layout.sectionInfo}>
           <h1 className={styles.heading3}>Graha ASTEL</h1>

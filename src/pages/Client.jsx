@@ -7,7 +7,7 @@ const Client = () => {
     <div >
       <Navbar />
       <div className="partner pt-[2rem]">
-        <Billing title="Our Product" subtitle="Discover details Information about our product  by simply clicking on the logo" />
+        <Billing title="Our Product" subtitle="" />
 
       </div>
     </div>

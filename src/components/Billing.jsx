@@ -54,7 +54,7 @@ const Billing = ({ subtitle }) => {
                 <div key={key} className="flex justify-center">
                   {item.content && (
                     <a href={extractHref(item.content.rendered)} target="_blank" rel="noopener noreferrer">
-                      <img
+                      <image
                         src={item._embedded['wp:featuredmedia'][0]?.source_url}
                         alt="Image"
                         className="w-full h-auto object-contain" // use object-contain to maintain aspect ratio

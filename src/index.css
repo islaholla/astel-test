@@ -74,7 +74,9 @@
     #11101d 91.61%
   );
 }
-
+.about  .navbar li{
+  color: white;
+ }
 .bg-black-gradient-2 {
   background: linear-gradient(
     -168.39deg,

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from "../style";
+import expertiseImage from '../assets/Digital-transformation.jpg';
+import sales from '../assets/people.jpg';
+import StrategicPartnerships from '../assets/StrategicPartnerships.jpg';
 
 const ExpertiseCard = ({ title, description, detail, image, isActive, onClick }) => (
   <motion.div
-    className={`bg-white rounded-lg shadow-lg transition-all duration-300 cursor-pointer ${isActive ? 'w-full h-auto p-6' : 'w-80 h-auto mb-4 p-4'}`}
+    className={`bg-white rounded-lg shadow-lg transition-all duration-300 cursor-pointer ${isActive ? 'w-full h-auto p-6' : 'w-full h-auto p-4 mb-4'}`}
     onClick={onClick}
     initial={{ scale: 0.95 }}
     animate={{ scale: isActive ? 1.05 : 1 }}
@@ -12,7 +15,7 @@ const ExpertiseCard = ({ title, description, detail, image, isActive, onClick })
     transition={{ duration: 0.15 }}
   >
     <img src={image} alt={title} className={`w-full h-48 object-cover mb-4 ${isActive ? '' : 'rounded-lg'}`} />
-    <h3 className={`text-${isActive ? '3xl' : '2xl'} font-bold`}>{title}</h3>
+    <h3 className={`text-${isActive ? '2xl' : 'xl'} font-bold`}>{title}</h3>
     <div className={`text-gray-700 ${isActive ? 'mt-2' : 'truncate'}`}>
       {isActive ? detail : description}
     </div>
@@ -38,13 +41,13 @@ const GlimpseOfAst = () => {
           <p>By leveraging our deep expertise, PT Astel Sistem Teknologi transforms challenges into opportunities and drives excellence in every project we undertake. Partner with us to experience the advantage of working with a team that truly understands and excels in delivering top-tier solutions.</p>
         </div>
       ),
-       image: 'https://via.placeholder.com/300x200'
+      image: expertiseImage
     },
     {
       title: 'Strategic Partnerships',
       description: 'We maintain strong relationships with key technology players...',
       detail: 'We maintain strong relationships with key technology players while actively seeking collaboration with digital disruptors. This unique blend of partnerships allows us to offer a wide spectrum of solutions, leveraging the latest innovations and maintaining our status as a trusted technology advisor.',
-      image: 'https://via.placeholder.com/300x200'
+      image: StrategicPartnerships
     },
     {
       title: 'Experienced Sales Team',
@@ -62,7 +65,7 @@ const GlimpseOfAst = () => {
           <p>By choosing PT Astel System Teknologi, you benefit from a sales team that not only understands your needs but is also equipped to deliver exceptional service and results. Our experienced sales professionals are here to guide you through every step of the process and ensure your success.</p>
         </div>
       ),
-      image: 'https://via.placeholder.com/300x200'
+      image: sales
     }
   ];
 
@@ -71,13 +74,13 @@ const GlimpseOfAst = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto p-4 mt-[4rem]">
+    <div className={`${styles.paddingX}`}>
       <h2 className={styles.heading2}>Glimpse of AST</h2>
       <div className="w-[150px] line mb-6"></div>
 
       <div className="flex flex-col-reverse items-center">
         {activeCardIndex === null ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
             {cards.map((card, index) => (
               <ExpertiseCard
                 key={index}
@@ -96,17 +99,15 @@ const GlimpseOfAst = () => {
                 onClick={() => handleCardClick(activeCardIndex)}
               />
             </div>
-            <div className="flex gap-4 mb-4">
+            <div className="flex gap-2 mb-[4rem] md:mb-4 flex-wrap">
               {cards.map((card, index) => (
-                activeCardIndex !== index && (
-                  <div
-                    key={index}
-                    className="cursor-pointer hover:text-[#ff7757] hover:underline"
-                    onClick={() => handleCardClick(index)}
-                  >
-                    <h3 className="text-2xl">{card.title}</h3>
-                  </div>
-                )
+                <div
+                  key={index}
+                  className={`cursor-pointer hover:text-[#ff7757] ${activeCardIndex === index ? 'text-orange-500' : 'text-gray-700'}`}
+                  onClick={() => handleCardClick(index)}
+                >
+                  <h3 className="text-lg sm:text-2xl">{card.title}</h3>
+                </div>
               ))}
             </div>
           </>

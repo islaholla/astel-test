@@ -26,7 +26,7 @@ const Navbar = (custom) => {
                 className={`cursor-pointer lg:text-[16px] xl:text-[14px] ${custom.color ? custom.color : 'text-[#000]'} ${active === nav.title ? "text-[#000]" : "text-[#000]"} ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
                 onClick={() => setActive(nav.title)}
               >
-                <Link to={`${nav.id}`}>{nav.title}</Link>
+                <Link to={`${nav.id}`} className="font-bold">{nav.title}</Link> {/* Menambahkan font-bold */}
               </li>
             ))}
           </ul>
@@ -47,7 +47,7 @@ const Navbar = (custom) => {
                     className={`font-poppins font-medium cursor-pointer text-[16px] navbar ${active === nav.title ? "text-white" : "text-dimWhite"} ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                     onClick={() => setActive(nav.title)}
                   >
-                    <a href={`#${nav.id}`}>{nav.title}</a>
+                    <Link to={`${nav.id}`}  className="font-bold">{nav.title}</Link> {/* Menambahkan font-bold */}
                   </li>
                 ))}
               </ul>
