@@ -10,7 +10,7 @@ const Intro = () => {
     };
 
     return (
-        <div className={`flex flex-col lg:flex-row bg-white rounded-lg px-10 py-[6rem] shadow-lg gap-3`}>
+        <div className={`flex flex-col lg:flex-row bg-white rounded-lg px-10 py-[4rem] shadow-lg gap-3`}>
             {/* Left Section: Text Content */}
             <motion.div
                 className="lg:w-1/2 pr-5"
@@ -54,9 +54,9 @@ const Intro = () => {
                 ></lottie-player>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-[-1rem] w-full">
                     {[
-                        { title: 'Tradisi dan Inovasi', description: 'Terpercaya di berbagai sektor.' },
-                        { title: 'Transformasi Teknologi', description: 'Memenuhi kebutuhan modern.' },
-                        { title: 'Keahlian TI Mendalam', description: 'TI dan inovasi teknologi.' },
+                        { title: 'Tradition and Innovation', description: 'Combining reliable practices with new ideas ' },
+                        { title: 'Technological Transformation', description: 'Using modern technology to meet today’s needs' },
+                        { title: 'Deep IT Expertise', description: 'Bringing strong IT skills to create innovative tech solutions' },
                     ].map((item, index) => (
                         <motion.div
                             key={index}

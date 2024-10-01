@@ -75,7 +75,7 @@ const GlimpseOfAst = () => {
 
   return (
     <div className={`${styles.paddingX}`}>
-      <h2 className={styles.heading2}>Glimpse of AST</h2>
+      <h2 className={styles.heading2}>Why Choose AST</h2>
       <div className="w-[150px] line mb-6"></div>
 
       <div className="flex flex-col-reverse items-center">

@@ -39,9 +39,8 @@ const Business = () => {
         </motion.h2>
         <div className="w-[150px] line mx-auto" />
         <p className={`${styles.paragraph} sub-title text-center`}>
-        We specialize in advanced IT solutions, system integration and digital transformation. 
-Our solutions include:
-
+          We specialize in advanced IT solutions, system integration and digital transformation.
+          Our solutions include:
         </p>
         <div className="grid lg:grid-cols-4 grid-cols-2 gap-6 mt-6 mx-auto xl:w-[88%] w-full">
           {getPageBisnis ? getPageBisnis.map((item, index) => (
@@ -63,7 +62,7 @@ Our solutions include:
                 <button
                   onClick={() => {
                     setIsOpen(true);
-                    setKonten([item.title.rendered, parse(item.content.rendered)]);
+                    setKonten([item.title.rendered, parse(item.content.rendered), item._embedded["wp:featuredmedia"]["0"].source_url]);
                   }}
                   className="bg-[#FF7654] rounded-lg w-md-1/3 w-1/8 text-center py-2 text-sm text-white mt-2"
                 >
@@ -73,7 +72,7 @@ Our solutions include:
             </div>
           )) : ''}
         </div>
-        {isOpen && <Modal konten={konten[1]} title={konten[0]} setIsOpen={setIsOpen} />}
+        {isOpen && <Modal konten={konten[1]} title={konten[0]} image={konten[2]} setIsOpen={setIsOpen} />}
       </motion.div>
     </section>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import banner from '../../assets/diverse-people-working-office-min.jpg';
+import banner from '../../assets/about.png';
 
 const Banner = () => {
   const textAnimation = {
@@ -10,10 +10,10 @@ const Banner = () => {
 
   return (
     <div
-      className="relative w-full h-[350px] bg-cover bg-center"
+      className="relative w-full h-[350px] bg-cover bg-top"
       style={{ backgroundImage: `url(${banner})` }}
     >
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 "></div>
       
       <motion.h1
         className="relative text-white text-4xl font-bold text-center top-1/2 transform -translate-y-1/2"

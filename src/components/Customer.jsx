@@ -36,11 +36,11 @@ const Customers = () => {
             >
                 {getListCust ? getListCust?.map((item, key) => {
                     return (
-                        <div class=" w-full bg-[#555] sm:w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/6 p-4 flex flex-col  ">
+                        <div className=" w-full bg-[#555] sm:w-1/3 md:w-1/3 lg:w-1/4 xl:w-1/6 p-4 flex flex-col  ">
                             {item.content ? (
                                 <>
                                     <SwiperSlide>                      
-                                     <image src={item._embedded['wp:featuredmedia'][0].source_url} alt="Image" />
+                                     <img src={item._embedded['wp:featuredmedia'][0].source_url} alt="Image" />
                                     </SwiperSlide>
                                 </>) : ''}
                         </div>

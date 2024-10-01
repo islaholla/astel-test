@@ -69,7 +69,6 @@ const App = () => {
           <CTA paragrap= {getPageBreak[0] ? getPageBreak[0].title.rendered :''} />
           <Business />
           <Billing />
-          {/* <CTA paragrap= {getPageBreak[0] ? getPageBreak[0].title.rendered :''} /> */}
           <CTA paragrap= {getPageBreak[1] ? getPageBreak[1].title.rendered :''} />
           <CardDeal />
           <Testi />

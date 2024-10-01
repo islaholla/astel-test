@@ -17,9 +17,9 @@ function Main() {
                 <BrowserRouter>
                     <Routes>
                         <Route path='/' element={<App />} />
-                        <Route path='/product' element={<Client />} />
+                        <Route path='/partners' element={<Client />} />
                         <Route path='/about' element={<AboutPage />} />
-                        <Route path='/solution' element={<SolutionPage />} />
+                        <Route path='/solutions' element={<SolutionPage />} />
                         <Route path='/contact' element={<ContactPage />} />
                     </Routes>
                 </BrowserRouter>
