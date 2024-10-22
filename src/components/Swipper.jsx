@@ -11,13 +11,14 @@ import Swal from "sweetalert2";
 
 const SwiperHero = () => {
   const form = useRef();
+  const [showForm, setShowForm] = useState(false); // State untuk menampilkan form
   const [activeSlide, setActiveSlide] = useState(0); // State untuk melacak slide aktif
 
   const slideData = [
     {
       id: 1,
       title: "Your Partner in IT Excellent",
-      description: '',
+      description: 'Contact us to discover how we can partner together for your IT excellence!',
       showForm: true, // Menampilkan form hanya pada slide pertama
     },
     {
@@ -107,9 +108,19 @@ const SwiperHero = () => {
                   {item.title}
                 </motion.h1>
                 <p>{item.description}</p>
+                {index === 0 && !showForm && ( // Jika slide pertama dan form tidak ditampilkan
+                <button
+                  onClick={() => setShowForm(true)} // Menampilkan form saat tombol diklik
+                  className="bg-[#FF7757] text-white mt-[2rem] p-2 rounded"
+                >
+                  Contact Us
+                </button>
+              )}
               </motion.div>
-              {item.showForm && activeSlide === index && ( // Menampilkan form hanya jika showForm true dan slide aktif adalah slide pertama
-                <form
+           
+              {index === 0 && showForm && ( // Menampilkan form jika tombol diklik
+               
+               <form
                   ref={form}
                   onSubmit={sendEmail}
                   className="contact-hero bg-white w-[80%] 2xl:w-[70%] h-[353px] xl:h-[123px] sm:h-[103px] mt-[4rem] text-[#000] grid grid-cols-1 sm:grid-cols-5 sm:rounded-r-[20px] md:pl-[6rem] pl-[0] items-center rounded-r-[40px]"
@@ -159,7 +170,7 @@ const SwiperHero = () => {
                     </div>
                   </div>
                   <div className="bg-[#FF7757] text-white h-[100%] rounded-r-[20px] flex items-center gap-[2rem] px-[1.2rem]">
-                    <button className="rounded-r-[20px] font-judul text-[21px] 2xl:text-[28px] lg:text-[21px]  text-start w-[60%] leading-8">
+                  <button className="rounded-r-[20px] font-judul text-[21px] 2xl:text-[28px] lg:text-[21px]  text-start w-[60%] leading-8">
                       Connect Us
                     </button>
                     <img
