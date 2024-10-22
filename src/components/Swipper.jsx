@@ -113,7 +113,7 @@ const SwiperHero = () => {
                   onClick={() => setShowForm(true)} // Menampilkan form saat tombol diklik
                   className="bg-[#FF7757] text-white mt-[2rem] p-2 rounded"
                 >
-                  Contact Us
+                 Get in Touch
                 </button>
               )}
               </motion.div>
