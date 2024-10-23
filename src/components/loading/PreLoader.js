@@ -24,7 +24,7 @@ const PreLoader = () => {
       <div className="texts-container">
         <span>PT Astel Indonesia. </span>
         <span>Digital, </span>
-        <span>business, </span>
+        <span>Business, </span>
         <span>Technology. </span>
       </div>
     </div>
