@@ -32,7 +32,7 @@ const Footer = () => (
         Copyright Ⓒ 2024 Astel Solution. All Rights Reserved.
       </p>
 
-      <div className="flex flex-row md:mt-0 mt-6">
+{/*       <div className="flex flex-row md:mt-0 mt-6">
         {socialMedia.map((social, index) => (
           <div className="wrap-image" key={index}>
             <img
@@ -46,7 +46,7 @@ const Footer = () => (
           />
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   </section>
 );
